@@ -1,0 +1,79 @@
+/* Shared notebook style for the inner pages (11 years, standards) and the seasonal layer */
+body{margin:0;background:#D9CBA8;overflow-x:hidden}
+a{color:#2E2B26}a:hover{color:#7A4A22}
+.desk{position:relative;width:100%;box-sizing:border-box;padding:28px 14px 60px 10px;font-family:'Crimson Pro',Lora,Georgia,serif;color:#2E2B26}
+.sheet{position:relative;z-index:2;max-width:1060px;margin:0 auto 0 4%;transform:rotate(-.4deg);
+  background:radial-gradient(ellipse 70% 55% at 42% 38%,#F6EDD6 0%,#F1E5C6 45%,#E6D3A6 80%,#D8BF88 100%);
+  box-shadow:4px 8px 0 #BFAE86,10px 18px 30px rgba(60,40,10,.25);border-radius:3px 10px 6px 14px;overflow:hidden}
+.sheet .fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.ruled{position:absolute;inset:0;pointer-events:none;background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 37px,rgba(96,128,160,.22) 37px,rgba(96,128,160,.22) 38px);background-position:0 14px}
+.margin-line{position:absolute;top:0;bottom:0;left:104px;width:2px;background:rgba(176,70,60,.35);transform:rotate(.15deg)}
+.coil{position:absolute;top:0;left:0;width:70px;height:100%;pointer-events:none}
+.scratch{position:absolute;pointer-events:none;opacity:.35}
+.inner{position:relative;padding:34px 7% 70px 136px;display:flex;flex-direction:column;gap:22px}
+
+nav.top{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 22px;padding-bottom:6px}
+nav.top a{font-family:Caveat,cursive;font-size:24px;padding:10px 4px;text-decoration:none}
+nav.top a.home{font-family:Kalam,Caveat,cursive;font-weight:700;font-size:26px;margin-right:auto;transform:rotate(-1.5deg)}
+nav.top .lang{font-family:Caveat,cursive;font-size:22px;color:#6B655B}
+
+.kicker{margin:0;font-family:'Special Elite','PT Mono',monospace;font-size:15px;letter-spacing:.04em;color:#5E5A52}
+h1.page{margin:0;font-family:Kalam,Caveat,cursive;font-weight:700;font-size:50px;line-height:1.12;transform:rotate(-.6deg);transform-origin:left}
+h2.hand{margin:34px 0 0;font-family:Kalam,Caveat,cursive;font-weight:700;font-size:36px;line-height:1.18;transform:rotate(-.5deg);transform-origin:left;scroll-margin-top:20px}
+h3.hand{margin:22px 0 0;font-family:Kalam,Caveat,cursive;font-weight:700;font-size:25px;line-height:1.25}
+.flow{display:block}
+.flow > *{margin-bottom:16px}
+.flow p.t{margin:0 0 16px !important}
+.flow h3.hand{margin:28px 0 6px}
+.flow h2.hand{margin:46px 0 10px}
+.flow .go{display:inline-block;margin-top:18px}
+.inner p.t{margin:0;font-size:20px;line-height:1.6;max-width:720px;
+  /* ink that is not perfectly crisp */
+  text-shadow:0 0 .6px rgba(46,43,38,.45)}
+.inner p.t em{font-style:italic}
+.sig{font-family:'Special Elite','PT Mono',monospace;font-size:14px;color:#5E5A52}
+
+/* sticky notes in mixed colors */
+.sticky{position:relative;max-width:560px;padding:30px 26px 24px;margin:14px 0 10px 3%;transform:rotate(var(--r,-1deg));
+  box-shadow:2px 7px 12px rgba(60,40,10,.28);font-family:Caveat,cursive;color:#2E2B26}
+.sticky::before{content:"";position:absolute;top:-12px;left:42%;width:90px;height:26px;background:rgba(230,220,190,.72);transform:rotate(-5deg);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.sticky::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(160deg,rgba(255,255,255,.18),transparent 40%,rgba(120,80,20,.08))}
+.sticky p{margin:0 0 10px;font-size:23px;line-height:1.28}
+.sticky p:last-child{margin-bottom:0}
+.sticky p.lead{font-family:Kalam,Caveat,cursive;font-weight:700;font-size:24px}
+.sticky.y{background:#F3E39A}.sticky.p{background:#F2C6C2}.sticky.g{background:#CFE3B8}
+.sticky.b{background:#C9DCEB}.sticky.o{background:#F6CFA0}.sticky.l{background:#DCD0EC}
+.sticky.right{margin-left:auto;margin-right:2%}
+
+/* aged polaroids */
+.polaroid{position:relative;z-index:3;width:fit-content;background:#FBF6EA;padding:12px 12px 48px;transform:rotate(var(--r,3deg));
+  box-shadow:2px 6px 12px rgba(60,40,10,.3)}
+.polaroid::before{content:"";position:absolute;top:-13px;left:34%;width:92px;height:26px;background:rgba(232,222,186,.78);transform:rotate(-7deg);box-shadow:0 1px 2px rgba(0,0,0,.12);z-index:2}
+.polaroid .ph{position:relative;overflow:hidden}
+.polaroid img{display:block;width:var(--w,250px);height:auto;filter:sepia(.32) saturate(.82) contrast(.93) brightness(1.04) blur(.35px)}
+.polaroid .ph::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 45%,transparent 55%,rgba(110,70,20,.28) 100%),linear-gradient(120deg,rgba(255,240,200,.18),transparent 50%,rgba(255,230,180,.12))}
+.polaroid p{margin:0;position:absolute;bottom:11px;left:0;right:0;text-align:center;font-family:Caveat,cursive;font-size:21px;color:#4A453C}
+.float-r{float:right;margin:6px 0 18px 30px}
+.float-l{float:left;margin:6px 30px 18px 0}
+.clear{clear:both}
+.pinned-leaf{position:absolute;width:46px;height:46px;z-index:4;pointer-events:none}
+
+.go{align-self:flex-start;font-family:Caveat,cursive;font-weight:700;font-size:26px;padding:8px 20px;text-decoration:none;background:rgba(255,250,235,.55);
+  border:2.5px solid #2E2B26;border-radius:15px 225px 15px 255px/255px 15px 225px 15px;transform:rotate(-1deg)}
+.list{margin:0;padding-left:0;list-style:none;font-size:20px;line-height:1.7}
+
+/* seasonal layer: lies on the desk under and around the notebook */
+.season{position:absolute;top:0;left:0;width:100%;pointer-events:none;z-index:1;overflow:hidden}
+.season.over{z-index:3}
+.season svg{position:absolute}
+
+@media (max-width:700px){
+  .sheet{margin:0 !important;transform:none !important}
+  .inner{padding:24px 18px 48px 74px !important}
+  .margin-line{left:64px !important}
+  h1.page{font-size:36px}
+  h2.hand{font-size:29px}
+  .float-r,.float-l{float:none;margin:14px auto}
+  .sticky{margin-left:0}
+}
