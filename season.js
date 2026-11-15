@@ -85,3 +85,30 @@
   window.addEventListener("resize", function () { clearTimeout(draw._t); draw._t = setTimeout(draw, 150); });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
 })();
+
+/* Desk props: my mug, pencils and a little shaving, lying by the right edge of the notebook.
+   Three drawings (desk-a/b/c.svg); each page gets one. Hidden on narrow screens. */
+(function () {
+  function place() {
+    var old = document.getElementById("deskprop"); if (old) old.remove();
+    if (window.innerWidth < 1100) return;
+    var sheet = document.querySelector(".sheet"); if (!sheet) return;
+    var page = (location.pathname.split("/").pop() || "index.html");
+    var v = document.documentElement.getAttribute("data-prop");
+    if (!v) {
+      if (/^(index|ru)\.html$/.test(page) || page === "") v = "a";
+      else if (/standards/.test(page)) v = "b";
+      else if (/ny-11/.test(page)) v = "c";
+      else { var h = 0; for (var i = 0; i < page.length; i++) h = (h * 31 + page.charCodeAt(i)) % 997; v = "abc"[h % 3]; }
+    }
+    var r = sheet.getBoundingClientRect();
+    if (window.innerWidth - r.right < 90) return;
+    var img = document.createElement("img");
+    img.id = "deskprop"; img.src = "photos/desk-" + v + ".svg"; img.alt = ""; img.setAttribute("aria-hidden", "true");
+    var w = 210, overlap = 95;
+    img.style.cssText = "position:absolute;z-index:5;pointer-events:none;width:" + w + "px;left:" + Math.min(r.right - overlap, document.documentElement.clientWidth - w - 6) + window.scrollX + "px;top:" + (r.top + window.scrollY + (v === "a" ? 520 : 1350)) + "px;transform:rotate(" + (v === "a" ? 6 : -4) + "deg)";
+    document.body.appendChild(img);
+  }
+  window.addEventListener("load", place);
+  var t; window.addEventListener("resize", function () { clearTimeout(t); t = setTimeout(place, 200); });
+})();
