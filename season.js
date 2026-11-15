@@ -6,6 +6,7 @@
   var m = new Date().getMonth(); // 0 = Jan
   var season = (m >= 8 && m <= 10) ? "autumn" : (m === 11 || m <= 1) ? "winter" : (m >= 2 && m <= 4) ? "spring" : "summer";
   var forced = (location.search.match(/season=(\w+)/) || [])[1];
+  if (!forced) forced = document.documentElement.getAttribute("data-season");
   if (forced) season = forced;
 
   var MAPLE = "M50 4 L57 26 L72 16 L68 38 L92 34 L76 52 L88 60 L62 64 L64 88 L52 72 L50 96 L48 72 L36 88 L38 64 L12 60 L24 52 L8 34 L32 38 L28 16 L43 26 Z";
