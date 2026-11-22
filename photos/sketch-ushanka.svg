@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 170" fill="none" stroke="#2F3E5C" stroke-linecap="round" stroke-linejoin="round">
+<!-- crown of the hat -->
+<path d="M44 72 C42 44 58 26 80 25 C103 24 119 42 117 72" stroke-width="2.2" fill="#B8865A" fill-opacity=".28"/>
+<path d="M80 26 C78 40 79 56 81 70" stroke-width="1.1" opacity=".6"/>
+<path d="M60 32 C55 45 54 58 56 71 M101 33 C106 46 107 58 105 71" stroke-width=".9" opacity=".45"/>
+<!-- front fur flap turned up -->
+<path d="M33 74 C34 58 56 52 80 52 C105 52 128 57 128 74 C129 86 108 90 80 90 C53 90 32 88 33 74 Z" stroke-width="2.3" fill="#8C5A35" fill-opacity=".32"/>
+<path d="M40 66 l3 -4 M48 60 l2 -4 M57 57 l1 -4 M66 55 l1 -4 M75 54 l0 -4 M85 54 l0 -4 M94 55 l1 -4 M103 57 l1 -4 M112 60 l2 -4 M120 65 l3 -4" stroke-width="1.1" opacity=".7"/>
+<path d="M44 76 c3 -2 5 2 8 0 M58 80 c3 -2 5 2 8 0 M74 78 c3 -2 5 2 8 0 M90 80 c3 -2 5 2 8 0 M106 76 c3 -2 5 2 8 0" stroke-width="1" opacity=".55"/>
+<!-- ear flaps -->
+<path d="M36 82 C26 96 25 118 33 133 C40 138 47 134 49 124 C51 110 50 96 47 88" stroke-width="2.2" fill="#8C5A35" fill-opacity=".3"/>
+<path d="M124 82 C134 96 135 118 127 133 C120 138 113 134 111 124 C109 110 110 96 113 88" stroke-width="2.2" fill="#8C5A35" fill-opacity=".3"/>
+<path d="M33 100 l3 2 M32 112 l3 2 M34 124 l3 1 M127 100 l-3 2 M128 112 l-3 2 M126 124 l-3 1" stroke-width="1" opacity=".6"/>
+<!-- ties, loose in the wind -->
+<path d="M38 135 C36 145 42 150 38 160" stroke-width="1.3"/>
+<path d="M122 135 C126 143 120 150 126 158" stroke-width="1.3"/>
+<!-- a few snowflake-like specks -->
+<path d="M140 20 l0 8 M136 24 l8 0 M18 30 l0 6 M15 33 l6 0" stroke-width="1" opacity=".55"/>
+</svg>

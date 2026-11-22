@@ -31,9 +31,12 @@ a{color:#2E2B26}a:hover{color:#7A4A22}
 <script src="protect.js" defer></script>
 <link rel="stylesheet" href="worn.css">
 <script src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js?apiKey=pt_ab70fa285c3779aa44b9305eda519b" defer></script>
+<script src="season.js" defer></script>
+<style>.sheet{z-index:2}.season{position:absolute;top:0;left:0;width:100%;pointer-events:none;z-index:1;overflow:hidden}.season.over{z-index:3}.season svg{position:absolute}@media (max-width:600px){.sketch{float:none!important;margin:14px auto!important;display:block}}</style>
 </head>
 <body>
-<div style="position: relative; width: 100%; box-sizing: border-box; padding: 28px 14px 40px 10px; background: #D9CBA8; font-family: 'Marck Script', 'Crimson Pro', Georgia, serif; color: #2E2B26">
+<div class="season season-desk" aria-hidden="true"></div>
+<div style="position: relative; width: 100%; box-sizing: border-box; padding: 28px 14px 40px 10px; font-family: 'Marck Script', 'Crimson Pro', Georgia, serif; color: #2E2B26">
 
 <svg width="0" height="0" style="position: absolute" aria-hidden="true">
 <defs>
@@ -43,7 +46,7 @@ a{color:#2E2B26}a:hover{color:#7A4A22}
 </defs>
 </svg>
 
-<div class="sheet" style="position: relative; max-width: 1060px; margin: 0 auto 0 6%; transform: rotate(0.35deg); background: radial-gradient(ellipse 65% 50% at 46% 30%, #F6EDD6 0%, #F1E5C6 45%, #E6D3A6 80%, #D6BC84 100%); box-shadow: 4px 8px 0 #BFAE86, 10px 18px 30px rgba(60,40,10,0.25); border-radius: 8px 3px 12px 5px; overflow: hidden">
+<div class="sheet" style="position: relative; z-index: 2; max-width: 1060px; margin: 0 auto 0 6%; transform: rotate(0.35deg); background: radial-gradient(ellipse 65% 50% at 46% 30%, #F6EDD6 0%, #F1E5C6 45%, #E6D3A6 80%, #D6BC84 100%); box-shadow: 4px 8px 0 #BFAE86, 10px 18px 30px rgba(60,40,10,0.25); border-radius: 8px 3px 12px 5px; overflow: hidden">
 
 <svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.55" preserveAspectRatio="none"><rect width="100%" height="100%" filter="url(#grain2)"></rect></svg>
 <svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.35" preserveAspectRatio="none"><rect width="100%" height="100%" filter="url(#blotch2)"></rect></svg>
@@ -75,7 +78,8 @@ a{color:#2E2B26}a:hover{color:#7A4A22}
 <article style="max-width: 700px; display: flex; flex-direction: column; gap: 16px; padding-top: 8px">
 <h2 style="margin: 34px 0 0; font-family: Kalam, cursive; font-weight: 700; font-size: 30px; line-height: 1.2; transform: rotate(-0.8deg); transform-origin: left">The Cold and the Code</h2>
 <p style="margin: 0; font-size: 23px; line-height: 1.7">I worshiped my fur hat so much, especially because I could hardly demand that it was truly mine. Growing up in the northern Kazakh Soviet Republic, right on the doorstep of Russian Siberia, the word “weather” felt like a gross understatement. It wasn’t something you checked on the news or with a shaman or glass ball; it was a hostile entity that actively tried to sue you for existing. In the winter, the air didn’t just “touch” your skin; it bit you with the focused aggression of a stray dog protecting a bone. We didn’t have “seasons” so much as we had “The Big Freeze” and “The Slightly Less Big Freeze Where You Can Finally See the Sidewalk.”</p>
-<p style="margin: 0; font-size: 23px; line-height: 1.7">In this climate, the Mink Hat wasn’t just a fashion statement; it was a biological necessity. Without it, your ears would simply give up and fall off. But because it was so regal and structural, it acted as a personal greenhouse for my brain.</p>
+
+<div style="display:block"><figure style="float:right;margin:0 6px 6px 20px;width:170px;transform:rotate(5deg);text-align:center;position:relative;z-index:3"><img class="sketch" src="photos/sketch-ushanka.svg" alt="sketch: a fur ushanka hat with ear flaps" style="width:170px" draggable="false"><p style="margin:0;font-family:Caveat,cursive;font-size:20px;color:#2F3E5C">the hat</p></figure><p style="margin: 0; font-size: 23px; line-height: 1.7">In this climate, the Mink Hat wasn’t just a fashion statement; it was a biological necessity. Without it, your ears would simply give up and fall off. But because it was so regal and structural, it acted as a personal greenhouse for my brain.</p><div style="clear:both"></div></div>
 <p style="margin: 0; font-size: 23px; line-height: 1.7">While the Siberian wind was out there trying to turn the rest of the region into a giant ice cube, I was tucked under my brownish silk crown, radiating the heat of a thousand suns. I might have been walking through a landscape that looked like the surface of Hoth, but inside that Hat, it was 80°F.</p>
 <p style="margin: 0; font-size: 23px; line-height: 1.7">Thus, in that region, you treasured a fur hat like Gollum treasured his “Precious,” but for me, the value wasn’t just about warmth.</p>
 <p style="margin: 0; font-size: 23px; line-height: 1.7">The hat was made of mink. I know that today, many might make a face at the thought of fur, and I feel sorry for the animals too, but we do not choose where we are born. In the days of the Russian Empire, such fur was reserved for “blue bloods”. Even after the Bolsheviks seized power in 1917 and claimed that special status was a thing of the past, the allure of the mink remained!</p>
@@ -139,5 +143,6 @@ fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/
 </div>
 </div>
 <script data-goatcounter="https://windgirlnovel.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<div class="season season-over over" aria-hidden="true"></div>
 </body>
 </html>
