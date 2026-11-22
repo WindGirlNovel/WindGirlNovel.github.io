@@ -1,7 +1,11 @@
 /* © Wind Girl Novel: copy protection (does not affect screen readers or search engines) */
 html,body{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-touch-callout:none}
 input,textarea,select,[contenteditable="true"]{-webkit-user-select:text;user-select:text}
-img,video{-webkit-user-drag:none;-webkit-touch-callout:none;user-select:none;pointer-events:none}
+img,video{-webkit-user-drag:none;-webkit-touch-callout:none;user-select:none}
+img{pointer-events:none}
+video{pointer-events:auto}
+/* the watermark stays visible on videos but lets taps reach the play button */
+.ph:has(video)::after,.pg:has(video)::after{pointer-events:none !important}
 .ph,.pg,.torn{position:relative}
 .torn .pg::after{content:"© Wind Girl Novel";position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-end;padding:0 8px 6px 0;font:11px/1 "Special Elite","PT Mono",monospace;color:rgba(255,255,255,.82);text-shadow:0 0 3px rgba(0,0,0,.55);-webkit-touch-callout:none;user-select:none}
 @media print{
