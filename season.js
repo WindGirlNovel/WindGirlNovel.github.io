@@ -18,13 +18,26 @@
     winter: ["#FFFFFF", "#EEF3F7", "#DCE8F0"]
   };
 
+  // optional extra per page: <html data-petals="rose"> scatters red rose petals among the seasonal things
+  var petals = document.documentElement.getAttribute("data-petals");
+  var ROSE = ["#8E0E18", "#A3121E", "#B3141F", "#C21A26", "#7A0C14"];
+  function petal() {
+    var c = ROSE[Math.floor(rnd() * ROSE.length)];
+    // a soft rose petal: wide rounded top with a small notch, narrow base, one edge curling
+    return '<path d="M50 95 C34 90 14 70 11 46 C9 26 22 12 36 11 C42 11 46 14 50 13 C55 12 60 9 66 11 C80 14 92 28 89 48 C86 70 66 90 50 95 Z" fill="' + c + '" stroke="rgba(60,0,0,.28)" stroke-width="1"/>' +
+           '<path d="M16 44 C14 28 24 17 36 16" stroke="rgba(255,225,225,.32)" stroke-width="4" fill="none" stroke-linecap="round"/>' +
+           '<path d="M64 14 C80 18 88 32 86 48 C80 38 72 26 64 14 Z" fill="rgba(0,0,0,.2)"/>' +
+           '<path d="M50 90 C47 72 46 52 50 30" stroke="rgba(40,0,0,.2)" stroke-width="1.3" fill="none"/>';
+  }
   var seed = 7;
   function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
   function pick(a) { return a[Math.floor(rnd() * a.length)]; }
 
   function item(x, y, size, layer) {
     var rot = Math.floor(rnd() * 360), c = pick(palettes[season]), s = "";
-    if (season === "autumn") {
+    if (petals && rnd() < 0.6) {
+      s = petal(); size = Math.round(size * 1.35);
+    } else if (season === "autumn") {
       var shape = rnd() < 0.62 ? MAPLE : OVAL;
       s = '<path d="' + shape + '" fill="' + c + '" stroke="rgba(80,40,10,.35)" stroke-width="1.5"/>' +
           '<path d="M50 96 L50 30 M50 60 L32 44 M50 60 L68 44" stroke="rgba(70,35,10,.45)" stroke-width="2" fill="none"/>';
