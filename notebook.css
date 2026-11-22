@@ -50,9 +50,8 @@ h3.hand{margin:22px 0 0;font-family:Kalam,Caveat,cursive;font-weight:700;font-si
   box-shadow:2px 6px 12px rgba(60,40,10,.3)}
 .polaroid::before{content:"";position:absolute;top:-13px;left:34%;width:92px;height:26px;background:rgba(232,222,186,.78);transform:rotate(-7deg);box-shadow:0 1px 2px rgba(0,0,0,.12);z-index:2}
 .polaroid .ph{position:relative;overflow:hidden}
-.polaroid img{display:block;width:var(--w,250px);height:auto;filter:sepia(.32) saturate(.82) contrast(.93) brightness(1.04) blur(.35px)}
-.polaroid .ph::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse at 50% 45%,transparent 55%,rgba(110,70,20,.28) 100%),linear-gradient(120deg,rgba(255,240,200,.18),transparent 50%,rgba(255,230,180,.12))}
+.polaroid img{display:block;width:var(--w,250px);height:auto}
+.polaroid .ph::after{content:"© Wind Girl Novel";position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-end;padding:0 7px 5px 0;font:11px/1 "Special Elite","PT Mono",monospace;color:rgba(255,255,255,.82);text-shadow:0 0 3px rgba(0,0,0,.55);pointer-events:auto;-webkit-touch-callout:none;user-select:none}
 .polaroid p{margin:0;position:absolute;bottom:11px;left:0;right:0;text-align:center;font-family:Caveat,cursive;font-size:21px;color:#4A453C}
 .float-r{float:right;margin:6px 0 18px 30px}
 .float-l{float:left;margin:6px 30px 18px 0}
