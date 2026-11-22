@@ -63,3 +63,9 @@
 
 /* hand-drawn feel for boxes that were still square */
 .torn .pg{border-radius:3px 16px 4px 3px/12px 3px 14px 4px}
+
+@media (max-width:700px){
+ .readnote{padding:22px 18px 20px 44px}
+ .readnote .pp::after{left:28px}
+ .heartnote{padding:20px 20px 16px}
+}
