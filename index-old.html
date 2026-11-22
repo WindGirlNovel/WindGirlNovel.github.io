@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Saltanat Kamillya M. – data analyst, researcher, novelist</title>
+<meta name="description" content="Saltanat Kamillya M.: data analytics, independent research on how durable college majors&#x27; earnings are, and The Wind Girl, a novel in progress">
+<meta property="og:title" content="Saltanat Kamillya M. – data analyst, researcher, novelist">
+<meta property="og:description" content="Saltanat Kamillya M.: data analytics, independent research on how durable college majors&#x27; earnings are, and The Wind Girl, a novel in progress">
+<meta property="og:type" content="website">
+<meta property="og:image" content="portrait.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&amp;family=Kalam:wght@400;700&amp;family=Crimson+Pro:ital,wght@0,400;0,600;1,400&amp;family=Special+Elite&amp;family=Marck+Script&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#D9CBA8}
+a{color:#2E2B26}a:hover{color:#7A4A22}
+
+.case{margin-top:40px}
+.case-kicker{margin:0 0 12px 6px;font-family:'Special Elite',monospace;font-size:15px;color:#5E5A52}
+.board{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px 40px;padding:44px 36px 48px;border-radius:6px 14px 8px 12px;
+  background:radial-gradient(circle at 20% 30%,rgba(255,255,255,.10) 0 2px,transparent 3px) 0 0/23px 19px,
+             radial-gradient(circle at 70% 60%,rgba(70,40,10,.18) 0 1.5px,transparent 2.5px) 0 0/17px 21px,
+             linear-gradient(135deg,#B98E58,#A97D49 55%,#9C703F);
+  box-shadow:inset 0 0 0 10px #6E4B2A,inset 0 0 0 12px #5A3C21,inset 0 0 26px rgba(40,20,0,.45),4px 8px 16px rgba(60,40,10,.3);transform:rotate(.3deg)}
+.threads,.pins{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.threads{z-index:1}.pins{z-index:4}
+.note .pin{visibility:hidden}
+.note{position:relative;z-index:2;padding:30px 20px 22px;transform:rotate(var(--r));box-shadow:2px 7px 10px rgba(40,20,0,.35);font-family:Caveat,cursive;color:#2E2B26}
+.note p{margin:0;font-size:21px;line-height:1.2}
+.note .big{font-family:Kalam,cursive;font-weight:700;font-size:23px;line-height:1.15;margin-bottom:8px}
+.note.y{background:#F3E39A}.note.p{background:#F2C6C2}.note.g{background:#CFE3B8}.note.b{background:#C9DCEB}
+.note.c{background:#FBF6EA;background-image:repeating-linear-gradient(to bottom,transparent 0 25px,rgba(96,128,160,.3) 25px 26px);border-top:4px solid rgba(176,70,60,.5)}
+.note.q{background:#FBF6EA;outline:1px dashed rgba(46,43,38,.35);outline-offset:-8px}
+.note.q .big{font-size:26px}
+.pin{position:absolute;top:-9px;left:50%;width:18px;height:18px;margin-left:-9px;border-radius:50%;z-index:3;box-shadow:1px 3px 3px rgba(0,0,0,.4)}
+.pin.red{background:radial-gradient(circle at 35% 35%,#F08A7E,#B8231A 60%,#7E140E)}
+.pin.green{background:radial-gradient(circle at 35% 35%,#A6DE92,#3C8A2E 60%,#245A1B)}
+.legend{margin:16px 0 0 8px;font-family:Caveat,cursive;font-size:21px;color:#4A453C}
+.sw{display:inline-block;width:28px;height:3px;vertical-align:middle;border-radius:2px}
+.sw.red{background:#B8231A}.sw.green{background:#3C8A2E}
+@media (max-width: 1000px){.board{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width: 700px){
+  .board{grid-template-columns:1fr;padding:34px 18px 36px;gap:36px}
+}
+@media (max-width: 700px){
+  .sheet{margin:0 !important;transform:none !important}
+  .inner{padding:24px 18px 48px 74px !important}
+  .inner h1{font-size:38px !important}
+  .inner h2{font-size:32px !important}
+  .margin-line{left:64px !important}
+  .stain{display:none}
+}
+
+.sheet{z-index:2}
+.season{position:absolute;top:0;left:0;width:100%;pointer-events:none;z-index:1;overflow:hidden}
+.season.over{z-index:3}
+.season svg{position:absolute}
+/* aged polaroids */
+
+.little{max-width:440px;transform:rotate(-1.6deg);padding:28px 24px 22px;box-shadow:2px 7px 12px rgba(60,40,10,.28);font-family:Caveat,cursive;color:#2E2B26;position:relative}
+.little::before{content:"";position:absolute;top:-12px;left:40%;width:86px;height:24px;background:rgba(230,220,190,.72);transform:rotate(-5deg)}
+.little p{margin:0;font-size:23px;line-height:1.3}
+.little .k{font-family:'Special Elite','PT Mono',monospace;font-size:14px;color:#7A4A22;margin-bottom:6px}
+.little .h{font-family:Kalam,Caveat,cursive;font-weight:700;font-size:26px;margin-bottom:6px}
+
+.notes p.t{margin:0 0 14px;font-size:20px;line-height:1.6;max-width:640px}
+.np{position:relative;background:#FBF6EA;padding:11px 11px 42px;box-shadow:2px 6px 12px rgba(60,40,10,.3);width:fit-content}
+.np::before{content:"";position:absolute;top:-12px;left:34%;width:84px;height:24px;background:rgba(232,222,186,.78);transform:rotate(-7deg);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.np img{display:block;width:190px;height:250px;object-fit:cover}
+.np p{margin:0;position:absolute;bottom:9px;left:0;right:0;text-align:center;font-family:Caveat,cursive;font-size:20px;color:#4A453C}
+
+.torn{position:relative;margin:34px 0 14px 46px;max-width:300px;transform:perspective(900px) rotate(6deg) rotateY(-9deg) skewY(-1deg);transform-origin:20% 0;filter:drop-shadow(-6px 12px 10px rgba(60,40,10,.28))}
+.torn .pg{background:#F7EEDA;padding:16px 14px 18px 16px;border-radius:2px 14px 3px 2px;
+  background-image:linear-gradient(115deg,rgba(255,255,255,0) 60%,rgba(255,255,255,.35) 82%,rgba(120,90,50,.10) 100%),repeating-linear-gradient(to bottom,transparent 0 23px,rgba(96,128,160,.18) 23px 24px)}
+.torn img{display:block;width:100%;height:auto;filter:contrast(.98) brightness(1.02) !important}
+.sheet img.orig{filter:none !important}
+</style>
+<link rel="alternate" hreflang="en" href="https://windgirlnovel.com/">
+<link rel="alternate" hreflang="ru" href="https://windgirlnovel.com/ru.html">
+<script src="season.js" defer></script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>@media (max-width:760px){.doodle{display:none}}</style>
+<link rel="stylesheet" href="protect.css">
+<script src="protect.js" defer></script>
+<link rel="stylesheet" href="worn.css">
+</head>
+<body>
+<div class="season season-desk" aria-hidden="true"></div>
+<div style="position: relative; width: 100%; box-sizing: border-box; padding: 28px 14px 40px 10px; background: #D9CBA8; font-family: 'Marck Script', 'Crimson Pro', Georgia, serif; color: #2E2B26">
+
+<svg width="0" height="0" style="position: absolute" aria-hidden="true">
+<defs>
+<filter id="rough" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" seed="7"></feTurbulence><feDisplacementMap in="SourceGraphic" scale="9"></feDisplacementMap></filter>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"></feTurbulence><feColorMatrix values="0 0 0 0 0.35  0 0 0 0 0.27  0 0 0 0 0.15  0 0 0 0.35 0"></feColorMatrix></filter>
+<filter id="blotch"><feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="11"></feTurbulence><feColorMatrix values="0 0 0 0 0.55  0 0 0 0 0.38  0 0 0 0 0.12  0 0 0 0.55 -0.18"></feColorMatrix></filter>
+</defs>
+</svg>
+
+<div class="sheet" style="position: relative; max-width: 1180px; margin: 0 auto 0 4%; transform: rotate(-0.4deg); background: radial-gradient(ellipse 70% 55% at 42% 38%, #F6EDD6 0%, #F1E5C6 45%, #E6D3A6 80%, #D8BF88 100%); box-shadow: 4px 8px 0 #BFAE86, 10px 18px 30px rgba(60,40,10,0.25); border-radius: 3px 10px 6px 14px; overflow: hidden">
+
+<svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.55" preserveAspectRatio="none"><rect width="100%" height="100%" filter="url(#grain)"></rect></svg>
+<svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.35" preserveAspectRatio="none"><rect width="100%" height="100%" filter="url(#blotch)"></rect></svg>
+
+<div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 37px, rgba(96,128,160,0.22) 37px, rgba(96,128,160,0.22) 38px); background-position: 0 14px"></div>
+<div class="margin-line" aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: 104px; width: 2px; background: rgba(176,70,60,0.35); transform: rotate(0.15deg)"></div>
+
+<svg aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 70px; height: 100%; pointer-events: none">
+<defs><pattern id="coil" width="70" height="46" patternUnits="userSpaceOnUse"><circle cx="40" cy="23" r="7" fill="#8C7A58"></circle><circle cx="40" cy="23" r="5" fill="#3B3328"></circle><path d="M40 16 C 10 10, 0 22, 6 32 C 10 38, 30 34, 38 27" fill="none" stroke="#7D7E80" stroke-width="3.5" stroke-linecap="round"></path><path d="M40 16 C 12 11, 2 22, 7 31" fill="none" stroke="#C9CACC" stroke-width="1.2"></path></pattern></defs>
+<rect x="0" y="10" width="70" height="100%" fill="url(#coil)"></rect>
+</svg>
+
+<svg class="stain" aria-hidden="true" viewBox="0 0 200 200" style="position: absolute; top: 120px; right: 6%; width: 210px; height: 210px; pointer-events: none; transform: rotate(18deg); opacity: 0.75"><g filter="url(#rough)"><circle cx="100" cy="100" r="78" fill="none" stroke="rgba(122,74,34,0.32)" stroke-width="9"></circle><circle cx="104" cy="96" r="74" fill="none" stroke="rgba(122,74,34,0.18)" stroke-width="3"></circle><path d="M30 120 A 78 78 0 0 1 60 40" fill="none" stroke="rgba(110,62,26,0.35)" stroke-width="4"></path></g></svg>
+<svg class="stain" aria-hidden="true" viewBox="0 0 200 200" style="position: absolute; top: 1720px; left: 58%; width: 170px; height: 170px; pointer-events: none; transform: rotate(-40deg); opacity: 0.6"><g filter="url(#rough)"><path d="M100 22 A 78 78 0 1 1 26 120" fill="none" stroke="rgba(122,74,34,0.3)" stroke-width="8"></path><circle cx="96" cy="104" r="40" fill="rgba(140,90,40,0.08)"></circle></g></svg>
+<svg class="stain" aria-hidden="true" viewBox="0 0 120 60" style="position: absolute; top: 2850px; left: 14%; width: 160px; height: 80px; pointer-events: none; opacity: 0.55"><g filter="url(#rough)"><ellipse cx="60" cy="30" rx="50" ry="18" fill="rgba(122,74,34,0.18)"></ellipse><circle cx="104" cy="12" r="4" fill="rgba(122,74,34,0.3)"></circle><circle cx="112" cy="22" r="2" fill="rgba(122,74,34,0.3)"></circle></g></svg>
+
+<div class="inner" style="position: relative; padding: 36px 6% 64px 136px; display: flex; flex-direction: column; gap: 28px">
+
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 22px; padding-bottom: 8px">
+<a href="#top" style="font-family: Kalam, cursive; font-weight: 700; font-size: 26px; text-decoration: none; margin-right: auto; transform: rotate(-1.5deg)">Saltanat Kamillya M.</a>
+<a href="#research" style="font-family: Caveat, cursive; font-size: 24px; padding: 10px 4px; text-decoration: none">research</a>
+<a href="#writing" style="font-family: Caveat, cursive; font-size: 24px; padding: 10px 4px; text-decoration: none; transform: rotate(2deg)">writing</a>
+<a href="ny-11-years.html" style="font-family: Caveat, cursive; font-size: 24px; padding: 10px 4px; text-decoration: none; transform: rotate(-1deg)">life in NY</a>
+<a href="standards.html" style="font-family: Caveat, cursive; font-size: 24px; padding: 10px 4px; text-decoration: none">standards</a>
+<a href="#articles" style="font-family: Caveat, cursive; font-size: 24px; padding: 10px 4px; text-decoration: none; transform: rotate(1.5deg)">articles</a>
+<a href="#culture" style="font-family: Caveat, cursive; font-size: 24px; padding: 10px 4px; text-decoration: none; transform: rotate(-1.2deg)">culture</a>
+<a href="#videos" style="font-family: Caveat, cursive; font-size: 24px; padding: 10px 4px; text-decoration: none">videos</a>
+<a href="about.html" style="font-family: Caveat, cursive; font-size: 24px; padding: 10px 4px; text-decoration: none; transform: rotate(-2deg)">a spoonful of me</a>
+<a href="#contact" style="font-family: Caveat, cursive; font-weight: 700; font-size: 25px; padding: 8px 16px; text-decoration: none; border: 2px solid #2E2B26; border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px">write to me</a>
+<span style="font-family: Caveat, cursive; font-size: 22px; color: #6B655B"><b style="color:#2E2B26">EN</b> · <a href="ru.html" hreflang="ru" title="Русская версия" style="color: #6B655B">RU</a></span>
+</nav>
+
+<section id="top" style="display: flex; flex-wrap: wrap; gap: 32px 56px; align-items: flex-start; padding-top: 34px">
+<div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; font-family: 'Special Elite', monospace; font-size: 15px; letter-spacing: 0.06em; color: #5E5A52">data analyst · researcher · novelist</p>
+<h1 style="margin: 0; font-family: Kalam, cursive; font-weight: 700; font-size: 54px; line-height: 1.12; max-width: 700px">Numbers tell me what happens. Stories tell me <span style="position: relative; display: inline-block">why it matters<svg aria-hidden="true" viewBox="0 0 300 20" preserveAspectRatio="none" style="position: absolute; left: -4px; bottom: -10px; width: 104%; height: 18px"><path d="M2 12 C 60 4, 120 16, 180 8 S 270 6, 298 13" fill="none" stroke="#5E5A52" stroke-width="3" stroke-linecap="round" opacity="0.75"></path><path d="M10 16 C 80 9, 160 18, 290 10" fill="none" stroke="#5E5A52" stroke-width="1.5" stroke-linecap="round" opacity="0.5"></path></svg></span></h1>
+<p style="margin: 0; font-size: 24px; line-height: 1.55; max-width: 620px">Applied mathematics, a background in regulatory compliance, and a writer's ear. I research how durable a college major's earnings really are as AI changes the work, and I'm writing my first novel, <em>The Wind Girl</em>, told by the Wind.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: center; padding-top: 6px">
+<a href="#research" style="font-family: Caveat, cursive; font-weight: 700; font-size: 26px; padding: 8px 20px; text-decoration: none; background: rgba(255,250,235,0.55); border: 2.5px solid #2E2B26; border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px; transform: rotate(-1deg)">see the research →</a>
+<a href="novel.html" style="font-family: Caveat, cursive; font-weight: 700; font-size: 26px; padding: 8px 20px; text-decoration: none; background: rgba(255,250,235,0.55); border: 2.5px solid #2E2B26; border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px; transform: rotate(1.2deg)">read the novel →</a>
+</div>
+</div>
+<div style="flex: 1 1 260px; display: flex; flex-direction: column; align-items: center; gap: 4px; padding-top: 10px">
+<div style="position: relative; transform: rotate(4deg); background: #FBF6EA; padding: 16px 16px 46px; box-shadow: 2px 5px 10px rgba(60,40,10,0.25)">
+<div aria-hidden="true" style="position: absolute; top: -14px; left: 34%; width: 96px; height: 28px; background: rgba(230,220,190,0.75); transform: rotate(-7deg); box-shadow: 0 1px 2px rgba(0,0,0,0.12)"></div>
+<img class="orig" src="portrait.jpg" alt="Portrait of Saltanat Kamillya M." style="display: block; width: 250px; height: 250px; object-fit: cover">
+<p style="margin: 0; position: absolute; bottom: 10px; left: 0; right: 0; text-align: center; font-family: Caveat, cursive; font-size: 22px; color: #4A453C">me, Nov 2026</p>
+</div>
+</div>
+</section>
+
+
+<section id="two-doors" style="padding-top:46px">
+<div style="display:flex;flex-wrap:wrap;gap:34px 44px;align-items:flex-start">
+<a href="#research" class="wnote" style="flex:1 1 300px;max-width:470px;background:#C9DCEB;transform:rotate(-1.3deg);padding:26px 26px 22px;text-decoration:none;display:block;color:#2E2B26">
+<p style="margin:0;font-family:'Special Elite',monospace;font-size:14px;color:#7A4A22">the research · Nov 2026 – present</p>
+<p style="font-family: Kalam, Caveat, cursive; font-weight: 700; font-size: 34px; line-height: 1.12; margin: 4px 0 8px">How Durable Are the Earnings?</p>
+<p style="margin:0;font-family:Caveat,cursive;font-size:24px;line-height:1.25">179 New York majors, followed into real jobs: whose pay holds up when AI moves in</p>
+<span style="display:inline-block;margin-top:12px;font-family:Caveat,cursive;font-weight:700;font-size:25px;color:#2E2B26">open the case board →</span></a>
+<a href="novel.html" class="wnote" style="flex:1 1 300px;max-width:470px;background:#DCD0EC;transform:rotate(1.2deg) translateY(14px);padding:26px 26px 22px;text-decoration:none;display:flex;gap:18px;align-items:flex-start;color:#2E2B26">
+<span style="flex:1 1 auto;display:block">
+<span style="display:block;margin:0;font-family:'Special Elite',monospace;font-size:14px;color:#7A4A22">the novel · in progress</span>
+<span style="display:block;font-family: Kalam, Caveat, cursive; font-weight: 700; font-size: 34px; line-height: 1.12; margin: 4px 0 8px">The Wind Girl</span>
+<span style="display:block;font-family:Caveat,cursive;font-size:24px;line-height:1.25">a novel told by the Wind, written like a diary, felt like a prayer</span>
+<span style="display:inline-block;margin-top:12px;font-family:Caveat,cursive;font-weight:700;font-size:25px;color:#2E2B26">meet the Wind girl →</span></span>
+<span class="torn" style="flex:0 0 112px;margin:4px 0 0;max-width:112px;transform:rotate(4deg)"><span class="pg" style="display:block;padding:8px 7px 10px"><img src="photos/wind-girl-little-me.jpg" alt="Me as a little girl in a pink dress" loading="lazy"></span></span>
+</a>
+</div>
+<p style="margin:54px 0 14px 6px;font-family:'Special Elite',monospace;font-size:15px;color:#5E5A52">fresh in the notebook · start reading here</p>
+<div style="display:flex;flex-wrap:wrap;gap:26px 30px;align-items:flex-start">
+<a class="little" href="her-fathers-mornings.html" style="background:#F5DFA8;transform:rotate(-1.4deg);text-decoration:none;display:block;flex:1 1 240px;max-width:320px;margin:0"><p class="k">a chapter excerpt from The Wind Girl</p><p class="h">Her Father’s Mornings ☀️ →</p><p>who taught her that love could be joyful</p></a>
+<a class="little" href="about-my-mother.html" style="background:#F2C6DA;transform:rotate(1.1deg);text-decoration:none;display:block;flex:1 1 240px;max-width:320px;margin:0"><p class="k">a chapter from The Wind Girl</p><p class="h">About my Mother 🤍 →</p><p>care that shone like breathing, and the blanket she never kept for herself</p></a>
+<a class="little" href="issyk.html" style="background:#CFE3B8;transform:rotate(-.6deg);text-decoration:none;display:block;flex:1 1 240px;max-width:320px;margin:0"><p class="k">a trip home · Oct 2026</p><p class="h">Issyk: Tragedy and Gold 🏔️ →</p><p>a turquoise lake, a 1963 mudflow, two legends and the Golden Man</p></a>
+</div>
+</section>
+<section id="research" style="display: flex; flex-direction: column; gap: 22px; padding-top: 56px">
+<p style="margin: 0; font-family: 'Special Elite', monospace; font-size: 15px; color: #5E5A52">independent research · Nov 2026 – present</p>
+<h2 style="margin: 0; font-family: Kalam, cursive; font-weight: 700; font-size: 42px; line-height: 1.15; transform: rotate(-0.8deg); transform-origin: left">How Durable Are the Earnings?</h2>
+<p style="margin: 0; font-size: 23px; line-height: 1.6; max-width: 700px">Most "best majors" lists answer one question: <em>how well will I earn with this major?</em> I asked a second one: <em>how reliable and long-lasting are those earnings in New York?</em> The project follows 179 New York bachelor's majors into the jobs their graduates hold, using only public data.</p>
+
+<div style="display: flex; flex-wrap: wrap; gap: 26px 34px; padding: 16px 0 6px 10px">
+<div class="wnote" style="flex: 1 1 220px; max-width: 280px; transform: rotate(-2deg); background: #F3E39A; padding: 22px 22px 26px; box-shadow: 2px 6px 10px rgba(60,40,10,0.22)">
+<p style="margin: 0; font-family: Kalam, cursive; font-weight: 700; font-size: 46px; line-height: 1">0.26</p>
+<p style="margin: 8px 0 0; font-family: Caveat, cursive; font-size: 23px; line-height: 1.2; color: #3A362F">how closely pay and durability move together. a high salary is not a hedge</p>
+</div>
+<div class="wnote" style="flex: 1 1 220px; max-width: 290px; transform: rotate(1.6deg) translateY(18px); background: #FBF6EA; padding: 22px 22px 26px; box-shadow: 2px 6px 10px rgba(60,40,10,0.22); border-top: 22px solid rgba(226,214,180,0.8)">
+<p style="margin: 0; font-family: Kalam, cursive; font-weight: 700; font-size: 46px; line-height: 1"><span style="position: relative; display: inline-block">17 of 21<svg aria-hidden="true" viewBox="0 0 200 80" preserveAspectRatio="none" style="position: absolute; left: -16px; top: -12px; width: calc(100% + 32px); height: calc(100% + 24px)"><path d="M30 12 C 120 -2, 196 18, 190 42 C 184 72, 40 80, 12 50 C -4 30, 40 8, 110 10" fill="none" stroke="#5E5A52" stroke-width="2.2" stroke-linecap="round" opacity="0.7"></path></svg></span></p>
+<p style="margin: 8px 0 0; font-family: Caveat, cursive; font-size: 23px; line-height: 1.2; color: #3A362F">job groups where official forecasts underestimated growth. choosing a major = betting on a forecast</p>
+</div>
+<div class="wnote" style="flex: 1 1 220px; max-width: 270px; transform: rotate(-0.6deg) translateY(-6px); background: #E9D7C0; padding: 22px 22px 26px; box-shadow: 2px 6px 10px rgba(60,40,10,0.22)">
+<p style="margin: 0; font-family: Kalam, cursive; font-weight: 700; font-size: 46px; line-height: 1">1 in 3</p>
+<p style="margin: 8px 0 0; font-family: Caveat, cursive; font-size: 23px; line-height: 1.2; color: #3A362F">US businesses now use AI. in some of the best-paid majors, employers haven't caught up yet</p>
+</div>
+</div>
+
+<div class="case">
+<p class="case-kicker">the case board · what the data revealed</p>
+<div class="board" id="board">
+<svg class="threads" id="threads" aria-hidden="true"></svg>
+<svg class="pins" id="pins" aria-hidden="true"></svg>
+<div class="note q" data-pin="q" style="--r:-1.2deg"><span class="pin red"></span><p class="big">Who lands softly when AI moves in?</p><p>New York majors, followed into the jobs they lead to, the doors out of those jobs, and the people in them</p></div>
+<div class="note y" data-pin="pay" style="--r:2deg"><span class="pin red"></span><p class="big">AI doesn't check your salary</p><p>the best-paid and the lowest-paid majors can face the same AI pressure</p></div>
+<div class="note p" data-pin="tech" style="--r:-2.4deg"><span class="pin red"></span><p class="big">Math travels. Code, right now, doesn't</p><p>a math degree opens about 18 doors to similar-paying work. computer science: fewer than 1 that isn't under the same AI pressure</p></div>
+<div class="note b" data-pin="hard" style="--r:1.4deg"><span class="pin red"></span><p class="big">16% of New York jobs: a hard landing</p><p>older workforce, few ways out, high AI pressure, all at once. think office clerks, secretaries, bookkeepers, accountants</p></div>
+<div class="note c" data-pin="fc" style="--r:-0.8deg"><span class="pin red"></span><p class="big">Forecasts couldn't rank majors</p><p>a decade later, the official growth projections had put majors in no better order than chance</p></div>
+<div class="note g" data-pin="doors" style="--r:2.6deg"><span class="pin green"></span><p class="big">Firm ground comes with more doors</p><p>majors whose jobs hold up also tend to have more ways out. nursing: about 36</p></div>
+<div class="note y" data-pin="school" style="--r:-1.8deg"><span class="pin green"></span><p class="big">Same major, different cushion</p><p>selective schools: about +18% pay in the same major. for-profits: about −18%. SUNY and CUNY grads sit on the firmest ground</p></div>
+<div class="note p" data-pin="col" style="--r:1deg"><span class="pin red"></span><p class="big">Colleges follow enrollment, not AI</p><p>programs in the most AI-pressured majors aren't closing any faster. yet</p></div>
+<div class="note g" data-pin="mgr" style="--r:-2deg"><span class="pin green"></span><p class="big">The manager's 27 doors</p><p>a hotel manager's skills bridge into dozens of other management jobs. retraining into code can mean walking past them to the most crowded door</p></div>
+</div>
+<p class="legend"><span class="sw red"></span> red thread: where it hurts &nbsp;&nbsp; <span class="sw green"></span> green thread: where there's a way out &nbsp;&nbsp; tendencies, not predictions</p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px 26px; align-items: center; padding-top: 22px">
+<a href="https://www.linkedin.com/feed/update/urn:li:activity:7526336000827215872/" style="font-family: Caveat, cursive; font-weight: 700; font-size: 25px; padding: 8px 18px; text-decoration: none; border: 2.5px solid #2E2B26; border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; transform: rotate(1deg)">durability findings</a>
+<a href="https://www.linkedin.com/feed/update/urn:li:activity:7526445354377080833/" style="font-family: Caveat, cursive; font-weight: 700; font-size: 25px; padding: 8px 18px; text-decoration: none; border: 2.5px solid #2E2B26; border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px; transform: rotate(-1.4deg)">AI adoption findings</a>
+<a href="https://www.linkedin.com/feed/update/urn:li:activity:7527395393433681920/" style="font-family: Caveat, cursive; font-weight: 700; font-size: 25px; padding: 8px 18px; text-decoration: none; border: 2.5px solid #2E2B26; border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; transform: rotate(0.8deg)">education &amp; AI findings</a>
+<p style="margin: 0; font-family: 'Special Elite', monospace; font-size: 14px; color: #5E5A52; max-width: 420px">built in Python on public data: Dept. of Education, BLS, NYS DOL, IPEDS, U.S. Census Bureau</p>
+</div>
+
+<div style="margin-top: 26px; margin-left: 4%; max-width: 680px; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-family: Kalam, cursive; font-weight: 700; font-size: 25px">earlier: <span style="text-decoration: line-through; text-decoration-color: #5E5A52; text-decoration-thickness: 2px">what does a major earn?</span> what is a New York major worth?</h3>
+<p style="margin: 0; font-size: 22px; line-height: 1.6">During my internship with the Institutional Effectiveness team at Empire State University, I replicated The HEA Group's "What Your Major is Worth" for New York, and proposed and built extensions comparing bachelor's with master's and post-bachelor's certificates, plus earnings benchmarks for graduates over 34. The durability question grew out of that work.</p>
+</div>
+</section>
+
+<section id="writing" style="display: flex; flex-wrap: wrap; gap: 24px 48px; padding-top: 70px; align-items: flex-start">
+<div style="flex: 1 1 260px; transform: rotate(-1.2deg); padding-left: 2%">
+<p style="margin: 0; font-family: 'Special Elite', monospace; font-size: 15px; color: #7A4A22">fiction · in progress</p>
+<h2 style="margin: 6px 0 0; font-family: Kalam, cursive; font-weight: 700; font-size: 48px; line-height: 1.1">The Wind Girl</h2>
+<p style="margin: 6px 0 0; font-family: Caveat, cursive; font-size: 24px; color: #4A453C">my first novel, inspired by real life</p>
+<div class="torn" style="max-width:250px"><div class="pg"><img src="photos/wind-girl-little-me.jpg" alt="Me as a little girl in a pink dress, holding a doll" loading="lazy"></div></div><p style="margin: 2px 0 0 60px; font-family: Caveat, cursive; font-size: 22px; color: #4A453C; transform: rotate(-2deg)">me, little</p><div class="torn" style="max-width:250px;margin-left:96px;transform:perspective(900px) rotate(-4deg) rotateY(8deg)"><div class="pg"><img src="photos/wind-girl-steppe.jpg" alt="The real steppe near my childhood home, under autumn clouds" loading="lazy"></div></div><p style="margin: 2px 0 0 110px; font-family: Caveat, cursive; font-size: 22px; color: #4A453C; transform: rotate(1.5deg)">the steppe near home</p>
+</div>
+<div style="flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 14px; padding-top: 10px">
+<p style="margin: 0; font-family: Kalam, cursive; font-size: 26px; line-height: 1.3; color: #4A453C">A novel told by the Wind, written like a diary, felt like a prayer</p><div style="margin:6px 0 4px;padding:12px 18px;border:2px dashed #B9A27A;border-radius:6px;transform:rotate(-0.6deg);font-family:Caveat,Kalam,cursive;font-size:27px;line-height:1.35;color:#4A453C"><span style="font-size:18px;font-family:'Special Elite',monospace;color:#7A4A22">a gentle warning at the start of the book</span><br>“Someone might think the heroine has her head in the clouds. They’re right. She talks to the Wind. And it knows her better than she knows herself”</div><p style="margin:10px 0 18px;font-size:21px;line-height:1.6">🎵 <em>the sound of the novel:</em> <a href="https://music.youtube.com/watch?v=E44GzWFaaTM" target="_blank" rel="noopener">Güldiyar Tanrıdağlı — Umutsuz Aşk</a></p><p style="margin: 0; font-size: 23px; line-height: 1.6">The Wind has known her since she was a little girl, dancing with her father and singing along with him in the mornings. It knew the girl who saved her coins for a bun instead of the tram and walked home through the night city, happy. It knew the corner where she hid with her books, and the taste of the first imported chocolate bar after perestroika, shared and remembered for years.</p><p style="margin: 0; font-size: 23px; line-height: 1.6">It followed her from the steppe to a new country, where she raised her daughter while rebuilding her career from the ground up, an ocean away from her family. And it watched her love a man who measured everything in what he owned... including her. Day by day, she dimmed herself to fit his world.</p><p style="margin: 0; font-size: 23px; line-height: 1.6">But some evenings she still put on her headphones and danced in front of the mirror, just for herself.</p><p style="margin: 0; font-size: 23px; line-height: 1.6">This is a story of love that warms and love that cages, and of the quiet courage it takes to leave a man who only wanted her to fit. And it is the story of a mother and daughter who collide like two stars, and still belong to the same sky.</p><p style="margin: 0; font-size: 23px; line-height: 1.6">The Wind is not only the narrator but a character. There is a place with no windows, where fears speak in other people’s voices. The Wind cannot enter it. It can only wait by the window she has not yet opened.</p><p style="margin: 0; font-size: 23px; line-height: 1.6">The pages read like an old notebook, with photographs, handwriting, and lines sometimes soaked with tears, sometimes with laughter. Kazakh küi, faith, and the language of the steppe run through a modern story of love and immigration.</p><p style="margin: 0; font-size: 23px; line-height: 1.6; font-style: italic">Inspired by real life. Not quite a Hollywood happy ending, but a way back to her own light.</p><p style="margin: 0; font-family: 'Special Elite', monospace; font-size: 14px; color: #5E5A52">© Wind Girl Novel</p>
+<p style="margin: 0; font-size: 22px; line-height: 1.6">I write in English, Russian and Kazakh. My creative writing was honored with the Nicholas Pekearo Scholarship.</p>
+<a href="the-fur-hat.html" style="align-self: flex-start; display: block; max-width: 460px; margin: 10px 0 8px 2%; transform: rotate(-1.6deg); background: #FBF6EA; padding: 18px 22px 20px; box-shadow: 2px 6px 10px rgba(60,40,10,0.22); text-decoration: none; color: #2E2B26"><span style="display: block; font-family: 'Special Elite', monospace; font-size: 14px; color: #7A4A22">read the short story</span><span style="display: block; font-family: Kalam, cursive; font-weight: 700; font-size: 30px; line-height: 1.2; padding-top: 4px">The Fur Hat →</span><span style="display: block; font-family: Caveat, cursive; font-size: 22px; line-height: 1.25; color: #4A453C; padding-top: 4px">a Soviet childhood, one mink hat, and a family court that met at breakfast. the piece that helped me earn the scholarship</span></a>
+<a class="little" href="about-my-mother.html" style="align-self:flex-start;background:#F2C6DA;transform:rotate(1.2deg);text-decoration:none;display:block;max-width:440px;margin:10px 0 8px 2%"><p class="k">a chapter from The Wind Girl</p><p class="h">About my Mother 🤍 →</p><p>care that shone like breathing, and the blanket she never kept for herself</p></a>
+<a class="little" href="her-fathers-mornings.html" style="align-self:flex-start;background:#F5DFA8;transform:rotate(1deg);text-decoration:none;display:block;max-width:440px;margin:10px 0 8px 4%"><p class="k">a chapter excerpt from The Wind Girl</p><p class="h">Her Father’s Mornings ☀️ →</p><p>who taught her that love could be joyful</p></a>
+<a class="little" href="the-map-and-the-road.html" style="align-self:flex-start;background:#D9D2F0;transform:rotate(-1.2deg);text-decoration:none;display:block;max-width:440px;margin:10px 0 8px 4%"><p class="k">a chapter excerpt from The Wind Girl</p><p class="h">The Map and the Road 🗺️ →</p><p>a mother, a daughter, and two stars on one sky</p></a>
+<a class="little" href="conversations-with-the-wind.html" style="align-self:flex-start;background:#DCD0EC;transform:rotate(-1deg);text-decoration:none;display:block;max-width:440px;margin:10px 0 8px 2%"><p class="k">notes with the Wind · October 2026</p><p class="h">Conversations with the Wind 🌬️ →</p><p>your own branch of reality, and a tragedy laid at the feet of the ego</p></a>
+<a class="little" href="ward-27.html" style="align-self:flex-start;background:#D5E3E8;transform:rotate(0.8deg);text-decoration:none;display:block;max-width:440px;margin:10px 0 8px 4%"><p class="k">a note · Nov 2026</p><p class="h">Ward 27 🌙 →</p><p>indifference, dignity and one night</p></a>
+<a class="little" href="under-the-glass-dome.html" style="align-self:flex-start;background:#CFE3B8;transform:rotate(-1deg);text-decoration:none;display:block;max-width:440px;margin:10px 0 8px 4%"><p class="k">a note from writing The Wind Girl</p><p class="h">Under the Glass Dome 🌴 →</p><p>a dark Friday, a sunny Saturday under the palms</p></a>
+<a href="https://www.instagram.com/windgirlnovel/" style="align-self: flex-start; font-family: Caveat, cursive; font-weight: 700; font-size: 25px; padding: 8px 18px; text-decoration: none; border: 2.5px solid #2E2B26; border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px; transform: rotate(0.8deg)" target="_blank" rel="noopener">follow the novel on Instagram</a>
+<div style="display: flex; flex-wrap: wrap; gap: 30px 34px; padding-top: 22px; align-items: flex-start">
+<div class="little" style="background:#F3E39A"><p class="k">literary life</p><p class="h">My little celebration</p><p>I'm going to meet Boris Akunin!</p></div>
+<a class="little" href="ny-11-years.html" style="background:#CFE3B8; transform: rotate(1.4deg); text-decoration:none; display:block"><p class="k">notes from the city</p><p class="h">New York, 11 Years Later →</p><p>what helped me, and still does. then the standards I live by</p></a>
+<div class="doodle" aria-hidden="true" style="position:relative;height:0"><div style="position:absolute;right:10%;top:-190px;transform:rotate(-14deg);pointer-events:none"><svg viewBox="0 0 120 140" width="120" height="140" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)" opacity=".8"><path d="M60 128 C 58 100 60 70 62 20" stroke="#7A4A22" stroke-width="1.6"/><path d="M62 22 C 20 40 14 92 59 116 C 104 92 100 40 62 22 Z" fill="#C8752E" fill-opacity=".28" stroke="#8A4A1E" stroke-width="1.5"/><path d="M61 50 L40 40 M61 66 L34 58 M60 82 L36 78 M61 50 L82 40 M61 66 L88 58 M60 82 L86 78" stroke="#8A4A1E" stroke-width="1"/></g></svg></div></div>
+
+</div>
+</div>
+</section>
+
+<section id="articles" style="padding-top:70px">
+<p style="margin: 0 0 6px; font-family: 'Special Elite', 'PT Mono', monospace; font-size: 15px; color: #7A4A22">articles · notes on life</p>
+<h2 style="margin: 0 0 18px; font-family: Kalam, Caveat, cursive; font-weight: 700; font-size: 44px; line-height: 1.1; transform: rotate(-0.8deg); transform-origin: left">Articles</h2>
+<div style="display:flex; flex-wrap:wrap; gap:0 30px">
+<a class="little" href="quiet-professionalism.html" style="background:#C9DDF0; transform: rotate(1deg); text-decoration:none; display:block; max-width:420px; margin:0 0 22px"><p class="k">article · Nov 2026</p><p class="h">Professionalism doesn’t have to be loud ✨ →</p><p>one word, every table, and a note that made my day</p></a>
+<a class="little" href="beyond-the-fear.html" style="background:#F6E7A6; transform: rotate(-1.2deg); text-decoration:none; display:block; max-width:420px; margin:0 0 22px"><p class="k">article · Nov 2026</p><p class="h">Beyond the Fear →</p><p>beautiful things lie beyond the fear</p></a>
+<a class="little" href="standards.html#package" style="background:#CFE3B8; transform: rotate(1deg); text-decoration:none; display:block; max-width:420px; margin:0 0 22px"><p class="k">article</p><p class="h">How to Package Yourself the Right Way →</p><p>image, words and presence</p></a>
+<a class="little" href="standards.html#film" style="background:#C9DDF0; transform: rotate(-0.8deg); text-decoration:none; display:block; max-width:420px; margin:0 0 22px"><p class="k">article</p><p class="h">A Film About Your Own Life →</p><p>be the main character in your own frame</p></a>
+</div>
+</section>
+
+<div class="doodle" aria-hidden="true" style="position:relative;height:0"><div style="position:absolute;right:16%;top:-200px;transform:rotate(6deg);pointer-events:none"><svg viewBox="0 0 170 90" width="170" height="90" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)" opacity=".85"><path d="M8 14 L162 14 L162 34 C 152 36 152 54 162 56 L162 76 L8 76 L8 56 C 18 54 18 36 8 34 Z" fill="#F2C6DA" fill-opacity=".45" stroke="#7A2E2A" stroke-width="1.6"/><path d="M120 18 L120 72" stroke="#7A2E2A" stroke-width="1" stroke-dasharray="3 4"/><text x="62" y="44" text-anchor="middle" font-family="Special Elite, monospace" font-size="15" fill="#7A2E2A" stroke="none">ADMIT ONE</text><text x="62" y="62" text-anchor="middle" font-family="Caveat, cursive" font-size="15" fill="#7A2E2A" stroke="none">orchestra · row ?</text><text x="141" y="50" text-anchor="middle" font-family="Special Elite, monospace" font-size="12" fill="#7A2E2A" stroke="none" transform="rotate(-90 141 46)">No. 7</text></g></svg></div></div>
+
+<section id="culture" style="padding-top:70px">
+<p style="margin: 0 0 6px; font-family: 'Special Elite', 'PT Mono', monospace; font-size: 15px; color: #7A4A22">culture · films, plays, books</p>
+<h2 style="margin: 0 0 18px; font-family: Kalam, Caveat, cursive; font-weight: 700; font-size: 44px; line-height: 1.1; transform: rotate(-0.8deg); transform-origin: left">Culture</h2>
+<div style="display:flex; flex-wrap:wrap; gap:0 30px">
+<div class="little" style="background:#C9DDF0; transform: rotate(-1deg); display:block; max-width:420px; margin:0 0 22px"><p class="k">a ballet I'm looking forward to</p><p class="h">Romeo &amp; Juliet 🩰</p><p>my first ballet at Lincoln Center: <a href="https://www.nycballet.com/season-and-tickets/winter-2027/romeo-and-juliet" target="_blank" rel="noopener">Alexei Ratmansky's new <em>Romeo &amp; Juliet</em> at New York City Ballet</a></p></div>
+<div class="little" style="background:#DCD0EC; transform: rotate(1.1deg); display:block; max-width:420px; margin:0 0 22px"><p class="k">a Broadway evening I'm looking forward to · spring 2027</p><p class="h">Lost Lear 👑</p><p>Jessica Chastain in a new play inspired by <em>King Lear</em> · <a href="https://www.instagram.com/lostlearplay/" target="_blank" rel="noopener">@lostlearplay</a></p><p style="margin:8px 0 0;font-style:italic">“Who is it that can tell me who I am?”<br><span style="font-size:.85em">— Shakespeare, <em>King Lear</em>, Act 1, Scene 4</span></p></div>
+<a class="little" href="sweet-halloween.html" style="background:#F6C9A8; transform: rotate(1.2deg); text-decoration:none; display:block; max-width:420px; margin:0 0 22px"><p class="k">a sweet moment · Nov 2026</p><p class="h">A Sweet Halloween 🎃 →</p><p>a Snickers, the 90s in Kazakhstan, and Halloween in New York</p></a>
+<a class="little" href="issyk.html" style="background:#CFE3B8; transform: rotate(-1deg); text-decoration:none; display:block; max-width:420px; margin:0 0 22px"><p class="k">a trip home · Oct 2026</p><p class="h">Issyk: Tragedy and Gold 🏔️ →</p><p>a turquoise lake, a 1963 mudflow, two legends and the Golden Man</p></a>
+<a class="little" href="sweet-monday.html" style="background:#E9D3B8; transform: rotate(1deg); text-decoration:none; display:block; max-width:420px; margin:0 0 22px"><p class="k">a sweet moment · Nov 2026</p><p class="h">A sweet Monday morning 🍫 →</p><p>chocolate cake from a kind coworker, tea with lemon, and thoughts about The Nutcracker</p></a>
+<a class="little" href="spoonful-of-love.html" style="background:#F4C9C4; transform: rotate(-1.2deg); text-decoration:none; display:block; max-width:420px; margin:0 0 22px"><p class="k">cinema · Nov 14</p><p class="h">Spoonful of Love →</p><p>a film in Armenian, no subtitles, and a song I now play on repeat</p></a>
+<a class="little" href="delirium.html" style="background:#F6D2B0; transform: rotate(1deg); text-decoration:none; display:block; max-width:420px; margin:0 0 22px"><p class="k">theater · Oct 31</p><p class="h">Delirium →</p><p>Khamatova and Burkovsky an arm's length away. not a play you watch, a play you live through</p></a>
+<a class="little" href="salome.html" style="background:#F2C6DA; transform: rotate(-1deg); text-decoration:none; display:block; max-width:420px; margin:0 0 22px"><p class="k">opera · April 29, 2025</p><p class="h">Salome at the Met →</p><p>opening night, and a dress that waited three years for its moment</p></a>
+<a class="little" href="dakar-2000.html" style="background:#F6E7A6; transform: rotate(1.2deg); text-decoration:none; display:block; max-width:420px; margin:0 0 22px"><p class="k">theater · March 22, 2025</p><p class="h">Dakar 2000 →</p><p>the story didn't sweep me away. the actor's charm did</p></a>
+<a class="little" href="october-2023.html" style="background:#F6D2B0; transform: rotate(-1deg); text-decoration:none; display:block; max-width:420px; margin:0 0 22px"><p class="k">dance & theater · Oct 2023</p><p class="h">Two nights in October →</p><p>a highline above the stage at BAM, and Daphne at Lincoln Center</p></a>
+<a class="little" href="my-day.html" style="background:#F2C6DA; transform: rotate(1.2deg); text-decoration:none; display:block; max-width:420px; margin:0 0 22px"><p class="k">Broadway · autumn 2023</p><p class="h">My Day 🎂 →</p><p>a birthday just for me: Serendipity, The Cottage, and dancing in the aisle</p></a>
+<a class="little" href="momo.html" style="background:#C9DDF0; transform: rotate(-1.4deg); text-decoration:none; display:block; max-width:420px; margin:0 0 22px"><p class="k">dance · March 2025</p><p class="h">MOMO, Batsheva →</p><p>Ohad Naharin at BAM. the line between "I" and "we"</p></a>
+</div>
+</section>
+
+<section id="videos" style="display: flex; flex-direction: column; gap: 22px; padding-top: 70px">
+<h2 style="margin: 0; font-family: Kalam, cursive; font-weight: 700; font-size: 42px; transform: rotate(0.6deg); transform-origin: left">videos</h2>
+<div style="max-width: 640px; margin-left: 3%; transform: rotate(-1deg); background: #F3E39A; padding: 18px 24px 22px; box-shadow: 2px 6px 10px rgba(60,40,10,0.22); display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-family: 'Special Elite', monospace; font-size: 14px; color: #7A4A22">coming up</p><p style="margin: 0; font-family: Kalam, cursive; font-weight: 700; font-size: 26px; line-height: 1.25">book readings</p><p style="margin: 0; font-family: Caveat, cursive; font-size: 24px; line-height: 1.3; color: #2E2B26">I'm organizing readings of The Wind Girl and my short stories, and I'll post the videos here. want to host one or come along? <a href="#contact">write to me</a></p></div>
+<div style="display: flex; flex-wrap: wrap; gap: 34px 44px; align-items: flex-start">
+<div style="flex: 1 1 300px; max-width: 470px; transform: rotate(-1.5deg); display: flex; flex-direction: column; gap: 8px">
+<div style="aspect-ratio: 16 / 9; background: #FBF6EA; border: 2px dashed #8A8274; border-radius: 4px 12px 6px 10px; display: flex; align-items: center; justify-content: center; font-family: Caveat, cursive; font-size: 24px; color: #5E5A52">presentation video coming soon</div>
+<h3 style="margin: 0; font-family: Kalam, cursive; font-weight: 700; font-size: 22px">How durable are the earnings? a 5-minute walkthrough</h3>
+<p style="margin: 0; font-size: 21px; color: #4A453C">what the durability index shows, and what it does not</p>
+</div>
+<div style="flex: 1 1 300px; max-width: 420px; transform: rotate(2deg) translateY(30px); display: flex; flex-direction: column; gap: 8px">
+<div style="aspect-ratio: 16 / 9; background: #FBF6EA; border: 2px dashed #8A8274; border-radius: 10px 4px 12px 6px; display: flex; align-items: center; justify-content: center; font-family: Caveat, cursive; font-size: 24px; color: #5E5A52">reading video coming soon</div>
+<h3 style="margin: 0; font-family: Kalam, cursive; font-weight: 700; font-size: 22px">a reading from The Wind Girl</h3>
+<p style="margin: 0; font-size: 21px; color: #4A453C">first reading to be announced</p>
+</div>
+</div>
+</section>
+
+<section id="about" style="padding-top:70px">
+<a class="little" href="about.html" style="background:#E3D3EE; transform: rotate(1.2deg); text-decoration:none; display:block; max-width:420px"><p class="k">a spoonful of me</p><p class="h">A spoonful of me 🥄 →</p><p>who I am, what I do by day, and what I make in my free time</p></a>
+<div class="doodle" aria-hidden="true" style="position:relative;height:0"><div style="position:absolute;right:12%;top:-120px;transform:rotate(-4deg);pointer-events:none"><svg viewBox="0 0 120 80" width="120" height="80" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)" opacity=".85" stroke="#7A2E2A" stroke-width="1.7"><path d="M40 66 C 10 44 10 18 30 18 C 38 18 40 26 40 28 C 40 26 44 18 52 18 C 70 18 70 44 40 66 Z" fill="#E7A0A8" fill-opacity=".35"/><path d="M92 14 L96 30 L112 32 L99 41 L104 58 L92 48 L80 58 L85 41 L72 32 L88 30 Z" stroke="#B8862E" fill="#E8C35A" fill-opacity=".3"/></g></svg></div></div>
+
+</section>
+
+<section id="contact" style="padding-top: 70px; padding-left: 8%">
+<div class="doodle" aria-hidden="true" style="position:relative;height:0"><div style="position:absolute;right:1%;top:40px;transform:rotate(-2deg);pointer-events:none"><svg viewBox="0 0 220 90" width="220" height="90" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)" opacity=".75" stroke="#2F3E5C" stroke-width="1.5"><path d="M4 84 L216 84"/><path d="M12 84 L12 52 L30 52 L30 84 M36 84 L36 40 L52 40 L52 84 M58 84 L58 30 L66 22 L74 30 L74 84 M80 84 L80 46 L98 46 L98 84"/><path d="M110 84 L110 34 L116 34 L116 20 L120 10 L124 20 L124 34 L130 34 L130 84"/><path d="M120 10 L120 2"/><path d="M138 84 L138 48 L156 48 L156 84 M162 84 L162 36 L180 36 L180 84 M186 84 L186 56 L206 56 L206 84"/><path d="M42 48 l4 0 M42 58 l4 0 M86 54 l6 0 M86 64 l6 0 M168 44 l6 0 M168 54 l6 0 M144 58 l6 0"/></g></svg></div></div>
+
+<div style="max-width: 560px; transform: rotate(1.8deg); background: #FBF6EA; padding: 30px 32px 34px; box-shadow: 3px 8px 14px rgba(60,40,10,0.25); background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 33px, rgba(176,70,60,0.18) 33px, rgba(176,70,60,0.18) 34px); display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: Kalam, cursive; font-weight: 700; font-size: 38px">let's talk</h2>
+<p style="margin: 0; font-size: 22px; line-height: 1.6">For field-by-field results, analytics roles, speaking or the novel, send me a note</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center">
+<a href="mailto:windgirlnovel@outlook.com" style="font-family: Caveat, cursive; font-weight: 700; font-size: 26px; padding: 8px 4px">windgirlnovel@outlook.com</a>
+<a href="https://www.linkedin.com/in/saltanatmeiram/" style="font-family: Caveat, cursive; font-weight: 700; font-size: 25px; padding: 6px 16px; text-decoration: none; border: 2.5px solid #2E2B26; border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px">www.linkedin.com/in/saltanatmeiram</a>
+</div>
+</div>
+</section>
+
+<footer class="site-foot" style="clear:both;margin-top:60px;padding-top:26px;border-top:1.5px dashed rgba(122,74,34,.35)">
+<p style="margin:0 0 12px;font-family:Kalam,Caveat,cursive;font-weight:700;font-size:26px;color:#7A2E2A;transform:rotate(-1deg);transform-origin:left">If something real resonated with you, stay: follow for more.</p>
+<a style="display:inline-block;margin:0 14px 10px 0;padding:6px 14px;border:1.5px solid #2F3E5C;border-radius:3px;font-family:Caveat,cursive;font-size:24px;color:#2F3E5C;text-decoration:none;background:rgba(255,255,255,.35);transform:rotate(-1deg)" href="https://www.linkedin.com/in/saltanatmeiram/" target="_blank" rel="noopener">LinkedIn</a><a style="display:inline-block;margin:0 14px 10px 0;padding:6px 14px;border:1.5px solid #2F3E5C;border-radius:3px;font-family:Caveat,cursive;font-size:24px;color:#2F3E5C;text-decoration:none;background:rgba(255,255,255,.35);transform:rotate(1.2deg)" href="https://www.instagram.com/windgirlnovel/" target="_blank" rel="noopener">Instagram @windgirlnovel</a><a style="display:inline-block;margin:0 14px 10px 0;padding:6px 14px;border:1.5px solid #2F3E5C;border-radius:3px;font-family:Caveat,cursive;font-size:24px;color:#2F3E5C;text-decoration:none;background:rgba(255,255,255,.35);transform:rotate(-.6deg)" href="mailto:windgirlnovel@outlook.com">windgirlnovel@outlook.com</a>
+<p style="margin:16px 0 0;font-family:'Special Elite','PT Mono',monospace;font-size:13px;line-height:1.5;color:#5E5A52;max-width:640px">© 2026 Saltanat Kamillya M. · © Wind Girl Novel. All rights reserved. Texts, photos and the novel The Wind Girl may not be copied or reused without my written permission.</p>
+</footer>
+</div>
+</div>
+</div>
+<script>
+(function () {
+  // red = where it hurts, green = a way out
+  var links = [["q","pay","red"],["pay","tech","red"],["tech","hard","red"],["hard","col","red"],["fc","col","red"],["q","fc","red"],
+               ["q","doors","green"],["doors","school","green"],["doors","mgr","green"],["tech","mgr","green"]];
+  var board = document.getElementById("board"), svg = document.getElementById("threads"), psvg = document.getElementById("pins");
+  if (!board || !svg) return;
+  function pinAt(id) {
+    var n = board.querySelector('[data-pin="' + id + '"] .pin'); if (!n) return null;
+    var b = board.getBoundingClientRect(), r = n.getBoundingClientRect();
+    return [r.left - b.left + r.width / 2, r.top - b.top + r.height / 2];
+  }
+  function draw() {
+    var out = "";
+    links.forEach(function (l) {
+      var a = pinAt(l[0]), b = pinAt(l[1]); if (!a || !b) return;
+      var mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2 + Math.min(60, Math.hypot(b[0] - a[0], b[1] - a[1]) * 0.12);
+      var c = l[2] === "red" ? "#A3211A" : "#2F7A24";
+      out += '<path d="M' + a[0] + ' ' + a[1] + ' Q ' + mx + ' ' + my + ' ' + b[0] + ' ' + b[1] + '" fill="none" stroke="rgba(0,0,0,.25)" stroke-width="3" transform="translate(1.5,2.5)"/>' +
+             '<path d="M' + a[0] + ' ' + a[1] + ' Q ' + mx + ' ' + my + ' ' + b[0] + ' ' + b[1] + '" fill="none" stroke="' + c + '" stroke-width="2.8" stroke-linecap="round"/>';
+    });
+    // pin heads drawn over the threads, like real pins holding the string
+    var defs = '<defs><radialGradient id="pr" cx="35%" cy="35%"><stop offset="0" stop-color="#F08A7E"/><stop offset=".6" stop-color="#B8231A"/><stop offset="1" stop-color="#7E140E"/></radialGradient>' +
+               '<radialGradient id="pg" cx="35%" cy="35%"><stop offset="0" stop-color="#A6DE92"/><stop offset=".6" stop-color="#3C8A2E"/><stop offset="1" stop-color="#245A1B"/></radialGradient></defs>';
+    var pins = "";
+    board.querySelectorAll("[data-pin]").forEach(function (n) {
+      var p = pinAt(n.getAttribute("data-pin")); if (!p) return;
+      var g = n.querySelector(".pin").classList.contains("green") ? "pg" : "pr";
+      pins += '<circle cx="' + (p[0] + 1) + '" cy="' + (p[1] + 2.5) + '" r="9" fill="rgba(0,0,0,.3)"/><circle cx="' + p[0] + '" cy="' + p[1] + '" r="9" fill="url(#' + g + ')"/>';
+    });
+    svg.innerHTML = out;                 // strings run behind the notes
+    psvg.innerHTML = defs + pins;        // pin heads sit on top
+  }
+  window.addEventListener("load", draw); window.addEventListener("resize", draw);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+  draw();
+})();
+</script>
+<div class="season season-over over" aria-hidden="true"></div>
+<script data-goatcounter="https://windgirlnovel.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
