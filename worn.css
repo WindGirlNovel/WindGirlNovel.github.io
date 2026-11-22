@@ -1,0 +1,65 @@
+/* worn.css: paper that has lived a little. torn, sun-burned, creased in hands,
+   sticky notes lifted by the wind. no perfectly straight lines */
+:root{
+ --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .32  0 0 0 0 .22  0 0 0 0 .08  0 0 0 .5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.55'/></svg>");
+ --blotch:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='420' height='420'><filter id='b'><feTurbulence type='fractalNoise' baseFrequency='.018' numOctaves='3' seed='9'/><feColorMatrix values='0 0 0 0 .45  0 0 0 0 .3  0 0 0 0 .08  0 0 0 .55 -.12'/></filter><rect width='100%' height='100%' filter='url(%23b)'/></svg>");
+ --crease:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='260' preserveAspectRatio='none'><g fill='none' stroke-linecap='round'><path d='M-5 96 C60 90 120 104 190 86 S270 92 305 80' stroke='%23fff' stroke-width='1.6' opacity='.5'/><path d='M-5 98 C60 92 120 106 190 88 S270 94 305 82' stroke='%235a3d16' stroke-width='.8' opacity='.22'/><path d='M120 -5 C128 60 110 130 134 190 S126 240 140 265' stroke='%23fff' stroke-width='1.4' opacity='.4'/><path d='M122 -5 C130 60 112 130 136 190 S128 240 142 265' stroke='%235a3d16' stroke-width='.7' opacity='.18'/><path d='M200 265 C215 215 240 200 305 170' stroke='%235a3d16' stroke-width='.6' opacity='.14'/></g></svg>");
+ --crease-big:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1000' height='1400' preserveAspectRatio='none'><g fill='none' stroke-linecap='round'><path d='M-10 520 C200 500 420 548 640 506 S880 530 1010 498' stroke='%23fff' stroke-width='2.4' opacity='.38'/><path d='M-10 523 C200 503 420 551 640 509 S880 533 1010 501' stroke='%235a3d16' stroke-width='1.1' opacity='.13'/><path d='M560 -10 C540 300 590 640 548 980 S570 1300 556 1410' stroke='%23fff' stroke-width='2' opacity='.3'/><path d='M563 -10 C543 300 593 640 551 980 S573 1300 559 1410' stroke='%235a3d16' stroke-width='1' opacity='.1'/><path d='M-10 1130 C260 1100 520 1180 1010 1090' stroke='%235a3d16' stroke-width='.9' opacity='.08'/></g></svg>");
+ --wavy-rule:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1240' height='38'><path d='M0 37.4 C110 36.6 210 38.2 330 37.3 S520 36.5 640 37.6 S860 38.3 980 37.1 S1160 36.7 1240 37.4' fill='none' stroke='rgb(96,128,160)' stroke-opacity='.24' stroke-width='1'/></svg>");
+ --wavy-margin:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='900'><path d='M3 0 C4.2 120 1.8 240 3.3 380 S1.6 600 3.6 720 S2.4 840 3 900' fill='none' stroke='rgb(176,70,60)' stroke-opacity='.4' stroke-width='1.8'/></svg>");
+}
+
+/* ── the notebook sheet: sun-burned edges, creases from being held ── */
+.sheet{border-radius:4px 16px 7px 22px/18px 5px 20px 8px !important;
+ box-shadow:inset 0 0 80px rgba(150,98,28,.26),inset 0 0 14px rgba(120,80,20,.22),4px 8px 0 #BFAE86,10px 18px 30px rgba(60,40,10,.25) !important}
+.sheet::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+ background-image:var(--crease-big),var(--blotch);background-size:100% 1400px,420px 420px;background-repeat:repeat-y,repeat;opacity:.45;mix-blend-mode:multiply}
+.ruled{background-image:var(--wavy-rule) !important;background-size:1240px 38px !important;background-position:0 14px !important}
+.margin-line{background:var(--wavy-margin) repeat-y !important;background-size:6px 900px !important;width:6px !important;transform:none !important}
+
+/* ── torn tape: ragged ends instead of clean cuts ── */
+.sticky::before,.polaroid::before,.little::before,.np::before,.wnote::before{
+ clip-path:polygon(0 12%,5% 0,10% 14%,15% 2%,85% 0,90% 12%,95% 1%,100% 16%,97% 40%,100% 62%,96% 86%,100% 100%,90% 90%,84% 100%,16% 98%,10% 88%,4% 100%,1% 76%,4% 52%,0 30%);
+ background-image:var(--grain)}
+
+/* ── sticky notes: a little worn, edges uneven, the bottom lifted by wind ── */
+.sheet .sticky,.board .note:not(.c),.wnote{
+ border-radius:3px 20px 6px 26px/22px 4px 18px 6px;
+ background-image:var(--crease),var(--grain),radial-gradient(ellipse at 38% 30%,rgba(255,255,255,.28),transparent 62%),radial-gradient(ellipse at 100% 100%,rgba(130,85,20,.22),transparent 55%);
+ background-size:100% 100%,240px 240px,100% 100%,100% 100%;
+ box-shadow:inset 0 0 16px rgba(140,95,30,.24),inset -14px -16px 22px -14px rgba(110,70,15,.32),4px 12px 14px -5px rgba(60,40,10,.34) !important}
+.little{
+ border-radius:4px 18px 5px 24px/20px 5px 16px 6px !important;
+ background-image:var(--crease),var(--grain),radial-gradient(ellipse at 100% 100%,rgba(130,85,20,.22),transparent 55%) !important;
+ background-size:100% 100%,240px 240px,100% 100% !important;
+ box-shadow:inset 0 0 16px rgba(140,95,30,.22),inset -14px -16px 22px -14px rgba(110,70,15,.3),4px 12px 14px -5px rgba(60,40,10,.32) !important}
+.board .note.c{border-radius:3px 14px 5px 18px/16px 4px 12px 5px;border-top:0;box-shadow:inset 0 0 14px rgba(140,95,30,.2),4px 12px 14px -5px rgba(40,20,0,.38) !important}
+.board .note.q{outline:0;border:1.5px dashed rgba(46,43,38,.32);border-radius:6px 22px 9px 28px/24px 7px 20px 9px}
+.wnote{position:relative;border-top:0 !important}
+.wnote::before{content:"";position:absolute;top:-12px;left:38%;width:84px;height:24px;background-color:rgba(230,220,190,.75);transform:rotate(-6deg)}
+
+/* a folded, sun-bleached corner on some notes */
+.sheet .sticky:nth-of-type(3n+1)::after{content:"";position:absolute;right:0;bottom:0;width:30px;height:30px;inset:auto 0 0 auto;
+ background:linear-gradient(315deg,#E4D2A2 0 46%,rgba(80,50,10,.22) 50%,rgba(255,255,255,.55) 56%,rgba(255,255,255,.18) 100%);border-radius:0 0 12px 0}
+
+/* wind: notes held by tape at the top, the bottom breathing */
+@keyframes wind{
+ 0%,100%{transform:rotate(var(--r,-1deg)) skewX(-1deg)}
+ 40%{transform:rotate(calc(var(--r,-1deg) + 1.2deg)) skewX(.8deg) translateY(-1px)}
+ 70%{transform:rotate(calc(var(--r,-1deg) - .4deg)) skewX(-.4deg)}}
+.sheet .sticky{transform-origin:50% 0;animation:wind 8s ease-in-out infinite}
+.sheet .sticky:nth-of-type(2n){animation-duration:10.5s;animation-delay:-4s}
+.sheet .sticky:nth-of-type(3n){animation-duration:12s;animation-delay:-7s}
+.little{transform-origin:50% 0;transition:transform .5s ease}
+.little:hover{transform:rotate(-2.2deg) skewX(1.4deg) translateY(-2px) !important}
+@media (prefers-reduced-motion:reduce){.sheet .sticky{animation:none}.little{transition:none}}
+
+/* ── polaroids: aged card, softened corners ── */
+.sheet .polaroid,.np{
+ border-radius:2px 6px 3px 7px/6px 2px 7px 3px;
+ background-image:var(--grain),linear-gradient(165deg,#FCF7EC 0%,#F4EAD2 70%,#EADBB8 100%);
+ box-shadow:inset 0 0 12px rgba(150,110,40,.2),3px 8px 13px -2px rgba(60,40,10,.32) !important}
+.sheet .polaroid .ph,.np img{border-radius:2px 3px 1px 4px}
+
+/* hand-drawn feel for boxes that were still square */
+.torn .pg{border-radius:3px 16px 4px 3px/12px 3px 14px 4px}
