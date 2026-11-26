@@ -93,3 +93,18 @@ nav.top.simple .home{white-space:nowrap}
 @media (max-width:760px){nav.top.simple a,nav.top.simple .lang{white-space:nowrap}nav.top.simple .back{font-size:18px!important}}
 @media (max-width:760px){nav.top.simple{gap:8px}nav.top.simple .back{font-size:17px!important}nav.top.simple .more+.lang{margin-left:6px!important}nav.top.simple .lang{font-size:12px!important}nav.top.simple .more{margin-left:auto!important}}
 @media (max-width:760px){nav.top.simple .lang a,nav.top.simple .lang b{font-size:14px!important;padding:2px 1px!important}}
+/* heart note (pink) left and a smaller note form right, side by side, so pages end sooner */
+.heartnote{max-width:336px!important;padding:19px 24px 16px!important}
+.heartnote p{font-size:19px!important}.heartnote p span{font-size:15px!important}.heartnote .lyk{font-size:16px!important}
+.readnote{max-width:330px!important;padding:18px 20px 16px 44px!important}
+.readnote h3{font-size:20px!important}
+.readnote .k{font-size:15px!important;margin-bottom:10px!important}
+.readnote input,.readnote textarea{font-size:17px!important;padding:5px 8px!important;margin-bottom:8px!important}
+.readnote textarea{min-height:70px!important}
+.readnote button{font-size:19px!important;padding:4px 14px!important}
+.readnote .pp::after{left:28px!important}
+@media (min-width:761px){
+  .heartnote{float:right!important;clear:none!important;margin:40px 4% 20px 0!important}
+  .readnote{float:left!important;clear:none!important;margin:30px 0 20px 3%!important}
+  footer.site-foot{clear:both}
+}

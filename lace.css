@@ -206,3 +206,20 @@ a.tk:hover .tapme{transform:rotate(-6deg) scale(1.12)}
   .lace-page nav.top.simple .back,.lace-page nav.top.simple .lang{background:rgba(246,238,220,.62);border-radius:12px;padding:0 9px!important}
   .lace-page nav.top.simple .back{font-size:17px!important}
 }
+/* desktop: smaller spoon on the right, quiet top line like on phones */
+@media (min-width:761px){
+  .spoon{width:320px;margin:18px 6% 10px auto}
+  .lace-page nav.top.simple{background:none!important;box-shadow:none!important;transform:none!important;padding:0!important;margin:0 2% 6px!important;align-items:center}
+  .lace-page nav.top.simple .home{display:none}
+  .lace-page nav.top.simple .back,.lace-page nav.top.simple .lang{background:rgba(246,238,220,.62);border-radius:12px;padding:1px 12px!important;color:#2A221A!important;font-size:19px!important}
+  .lace-page nav.top.simple .lang a,.lace-page nav.top.simple .lang b{color:#2A221A!important;font-size:16px}
+  .lace-page nav.top.simple .lang{margin-left:auto}
+}
+@media (min-width:761px){
+  body.lace-page nav.top.simple a.back,body.lace-page nav.top.simple .lang{background:rgba(246,238,220,.82)!important;color:#2A221A!important;opacity:1!important;text-shadow:none!important}
+  body.lace-page nav.top.simple .lang a,body.lace-page nav.top.simple .lang b{color:#2A221A!important;opacity:1!important}
+}
+/* footer: no white box, just the two lines on small pale labels */
+body.lace-page footer.site-foot{background:none!important;box-shadow:none!important;transform:none!important;padding:10px 0 20px!important;border:none!important}
+body.lace-page footer.site-foot p{display:inline-block;background:rgba(246,238,220,.82);border-radius:10px;padding:3px 12px!important;margin:0 0 8px!important;transform:none!important}
+body.lace-page footer.site-foot p{background:rgba(246,238,220,.92)!important}

@@ -34,6 +34,22 @@ a{color:#2E2B26}a:hover{color:#7A4A22}
 <script src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js?apiKey=pt_ab70fa285c3779aa44b9305eda519b" defer></script>
 <script src="season.js" defer></script>
 <style>.sheet{z-index:2}.season{position:absolute;top:0;left:0;width:100%;pointer-events:none;z-index:1;overflow:hidden}.season.over{z-index:3}.season svg{position:absolute}@media (max-width:600px){.sketch{float:none!important;margin:14px auto!important;display:block}}</style>
+<style id="notebook-notes">/* heart note (pink) left and a smaller note form right, side by side, so pages end sooner */
+.heartnote{max-width:336px!important;padding:19px 24px 16px!important}
+.heartnote p{font-size:19px!important}.heartnote p span{font-size:15px!important}.heartnote .lyk{font-size:16px!important}
+.readnote{max-width:330px!important;padding:18px 20px 16px 44px!important}
+.readnote h3{font-size:20px!important}
+.readnote .k{font-size:15px!important;margin-bottom:10px!important}
+.readnote input,.readnote textarea{font-size:17px!important;padding:5px 8px!important;margin-bottom:8px!important}
+.readnote textarea{min-height:70px!important}
+.readnote button{font-size:19px!important;padding:4px 14px!important}
+.readnote .pp::after{left:28px!important}
+@media (min-width:761px){
+  .heartnote{float:right!important;clear:none!important;margin:40px 4% 20px 0!important}
+  .readnote{float:left!important;clear:none!important;margin:30px 0 20px 3%!important}
+  footer.site-foot{clear:both}
+}
+</style>
 </head>
 <body>
 <div class="season season-desk" aria-hidden="true"></div>
