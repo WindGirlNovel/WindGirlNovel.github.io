@@ -183,3 +183,26 @@ nav.top.simple .home{white-space:nowrap}
 a.tk:hover .tapme{transform:rotate(-6deg) scale(1.12)}
 @media (prefers-reduced-motion:reduce){.tapme{transition:none}}
 :lang(ru) .tapme{font-size:12.5px}
+
+/* phones: the tickets become pages you swipe to the right, one per screen */
+.swipebar{display:none}
+@media (max-width:760px){
+  .spoon{width:78%;margin:14px auto 6px}
+  .coll.scatter{display:flex!important;flex-wrap:nowrap;justify-content:flex-start!important;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;gap:0;padding:26px 0 18px;margin:0 -2%;scrollbar-width:none;-webkit-overflow-scrolling:touch;align-items:flex-start}
+  .coll.scatter::-webkit-scrollbar{display:none}
+  .coll.scatter>.tk{flex:0 0 84%;margin:0 8%;scroll-snap-align:center;scroll-snap-stop:always;box-sizing:border-box}
+  .coll.scatter>.tk.prog,.coll.scatter>.tk.snap{flex-basis:auto;width:66%;margin:0 17%}
+  .coll.scatter>.tk.tagwrap{flex-basis:76%;margin:0 12%}
+  .coll.scatter>.tk.tagwrap .tag{width:100%}
+  .swipebar{display:flex;align-items:center;justify-content:center;gap:14px;margin:2px auto 18px;padding:6px 14px;width:fit-content;background:#FBF6EA;border-radius:20px;box-shadow:0 4px 10px rgba(20,10,4,.3);font-family:Caveat,cursive;font-size:20px;color:#4D3A22}
+  .swipebar button{all:unset;cursor:pointer;font-size:22px;padding:0 6px;color:#7A2E2A}
+  .swipebar .dots{display:flex;gap:5px}
+  .swipebar .dots i{width:6px;height:6px;border-radius:50%;background:#CDBB9A}
+  .swipebar .dots i.on{background:#7A2E2A;transform:scale(1.3)}
+}
+@media (max-width:760px){
+  .lace-page nav.top.simple{margin:0 0 4px!important}
+  .lace-page nav.top.simple .back,.lace-page nav.top.simple .lang,.lace-page nav.top.simple .lang a,.lace-page nav.top.simple .lang b{color:#2A221A!important;text-shadow:none}
+  .lace-page nav.top.simple .back,.lace-page nav.top.simple .lang{background:rgba(246,238,220,.62);border-radius:12px;padding:0 9px!important}
+  .lace-page nav.top.simple .back{font-size:17px!important}
+}

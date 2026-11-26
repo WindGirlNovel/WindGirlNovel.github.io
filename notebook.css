@@ -83,3 +83,10 @@ nav.top.simple .back{font-family:Caveat,cursive;font-size:24px;color:#7A2E2A;tex
 nav.top.simple .lang{margin-left:auto;font-size:15px}
 nav.top.simple .home{white-space:nowrap}
 @media (max-width:600px){nav.top.simple{gap:6px 14px}nav.top.simple a{padding:4px 2px}nav.top.simple .home{margin-right:0;flex-basis:100%;font-size:21px}nav.top.simple .back{font-size:20px}}
+/* phones: no name bar, just a small black way back */
+@media (max-width:760px){
+  nav.top.simple{flex-wrap:nowrap;align-items:center;gap:10px;padding:0!important;margin:0 0 4px!important;background:none!important;box-shadow:none!important;transform:none!important}
+  nav.top.simple .home{display:none}
+  nav.top.simple .back{color:#1F1D1A!important;font-size:21px!important;padding:2px 0!important}
+  nav.top.simple .lang{margin-left:auto;font-size:13px!important}
+}
