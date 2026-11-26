@@ -1,0 +1,185 @@
+/* culture page: a crocheted tablecloth on a wooden table, with tickets and programs laid on it */
+body.lace-page{background:url(lace-tile.png) 0 0/760px 760px repeat,url(wood.svg) 0 0/600px 600px repeat #3E281B}
+.lace-page .season,.lace-page .sheet>.fx,.lace-page .ruled,.lace-page .margin-line,.lace-page .coil,.lace-page .scratch,.lace-page .stain{display:none!important}
+.lace-page .sheet{background:none!important;box-shadow:none!important;transform:none!important;margin:0 auto!important;max-width:1180px}
+.lace-page .sheet::before,.lace-page .sheet::after{display:none!important}
+.lace-page .inner{padding:30px 2% 60px!important}
+.lace-page nav.top{background:#FBF6EA;padding:12px 20px;box-shadow:0 2px 2px rgba(40,25,10,.2),0 8px 16px rgba(40,25,10,.25);transform:rotate(-.3deg);margin:0 2% 0}
+.headcard{position:relative;width:fit-content;max-width:640px;margin:34px auto 26px;padding:22px 40px 18px;background:#FBF6EA;text-align:center;transform:rotate(-.8deg);box-shadow:0 2px 2px rgba(40,25,10,.2),0 10px 18px rgba(40,25,10,.28)}
+.headcard::before{content:"";position:absolute;top:-13px;left:calc(50% - 46px);width:92px;height:26px;background:rgba(232,222,196,.8);transform:rotate(-4deg)}
+.headcard .kicker{padding:0!important;margin:0 0 2px}
+.headcard h1.page{margin:0}
+.headcard .t{margin:6px 0 0}
+
+/* the collection */
+.coll{position:relative;display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:30px 28px;padding:16px 0 50px}
+.coll .cf{position:absolute;pointer-events:none;z-index:0;filter:drop-shadow(.6px 1.4px 1px rgba(43,26,12,.45))}
+.tk{position:relative;z-index:1;display:block;text-decoration:none;color:#2E2B26;transform:rotate(var(--r,0deg)) translateY(var(--y,0px));transition:transform .3s ease,filter .3s ease;filter:drop-shadow(0 1.5px 1.5px rgba(40,25,10,.3)) drop-shadow(0 9px 12px rgba(40,25,10,.3))}
+a.tk:hover,a.tk:focus-visible{transform:rotate(calc(var(--r,0deg) * .3)) translateY(calc(var(--y,0px) - 7px)) scale(1.02);filter:drop-shadow(0 2px 2px rgba(40,25,10,.3)) drop-shadow(0 16px 18px rgba(40,25,10,.34))}
+.tk a{color:inherit}
+.tk .k{display:block;font-family:'Special Elite','PT Mono',monospace;font-size:13px;letter-spacing:.04em;text-transform:uppercase;opacity:.8;margin-bottom:6px}
+.tk .h{display:block;font-size:26px;line-height:1.1;margin-bottom:8px}
+.tk .p{display:block;font-family:Caveat,cursive;font-size:21px;line-height:1.22}
+.tk .go2{display:inline-block;margin-top:8px;font-family:'Special Elite',monospace;font-size:13px;letter-spacing:.06em;border-bottom:1px solid currentColor}
+
+/* ticket: main part + stub with notches cut at the perforation */
+.tix{width:400px;max-width:100%;display:flex;--sw:92px;--bg:#FBFBF7;
+  -webkit-mask:radial-gradient(circle 10px at calc(100% - var(--sw)) 0,#0000 97%,#000) top/100% 51% no-repeat,radial-gradient(circle 10px at calc(100% - var(--sw)) 100%,#0000 97%,#000) bottom/100% 51% no-repeat;
+          mask:radial-gradient(circle 10px at calc(100% - var(--sw)) 0,#0000 97%,#000) top/100% 51% no-repeat,radial-gradient(circle 10px at calc(100% - var(--sw)) 100%,#0000 97%,#000) bottom/100% 51% no-repeat}
+.tix .main{flex:1;padding:18px 18px 16px 22px;background:var(--bg)}
+.tix .stub{width:var(--sw);flex:none;background:var(--bg);border-left:2px dashed rgba(0,0,0,.25);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:14px 0;box-sizing:border-box}
+.tix .stub b{writing-mode:vertical-rl;transform:rotate(180deg);font-family:'Special Elite','PT Mono',monospace;font-weight:400;font-size:15px;letter-spacing:.22em}
+.tix .bar{width:46px;height:30px;background:repeating-linear-gradient(90deg,currentColor 0 2px,#0000 2px 3px,currentColor 3px 4px,#0000 4px 7px,currentColor 7px 10px,#0000 10px 12px);opacity:.75}
+/* the Cottage: a box-office ticket */
+.v-tm{--bg:#FBFBF6;color:#1F2430}
+.v-tm .main{border-left:10px solid #2F57A8;background:linear-gradient(#0000 0 0),repeating-linear-gradient(0deg,#0000 0 23px,rgba(47,87,168,.06) 23px 24px),var(--bg)}
+.v-tm .h{font-family:'PT Mono',monospace;font-weight:700;text-transform:uppercase;font-size:22px}
+.v-tm .stub{color:#2F57A8}
+/* cinema */
+.v-cine{--bg:#C4675E;color:#FFF4E4}
+.v-cine .main{box-shadow:inset 0 0 0 6px var(--bg),inset 0 0 0 7.5px rgba(255,244,228,.7)}
+.v-cine .h{font-family:'Crimson Pro',Georgia,serif;font-weight:600;font-size:28px}
+.v-cine .stub{border-left-color:rgba(255,244,228,.6)}
+/* opera */
+.v-opera{--bg:#F6EDD5;color:#3A2E1C}
+.v-opera .main{box-shadow:inset 0 0 0 7px var(--bg),inset 0 0 0 8px #A98A48,inset 0 0 0 11px var(--bg),inset 0 0 0 12px #A98A48;padding:22px 24px}
+.v-opera .h{font-family:Lora,Georgia,serif;font-style:italic;font-size:29px;color:#7A2E2A}
+.v-opera .stub{color:#8C6E33;border-left-color:#C9B07A}
+/* plain stubs */
+.v-blue{--bg:#D7E2EA;color:#22303C}
+.v-blue .h,.v-pink .h,.v-green .h{font-family:Kalam,Caveat,cursive;font-weight:700}
+.v-pink{--bg:#F1D6D8;color:#3D2228}
+.v-green{--bg:#D5E2C4;color:#26321D}
+
+/* programs and booklets: portrait, with a few pages showing at the edge */
+.prog{width:262px;min-height:350px;box-sizing:border-box;background:#FBF8EF;box-shadow:3px 3px 0 #EEE7D6,6px 6px 0 #E2D9C4;display:flex;flex-direction:column}
+.prog .band{background:#E8C53A;color:#111;padding:9px 14px 7px;font-family:Arial,Helvetica,sans-serif;font-weight:700;font-size:15px;letter-spacing:.2em}
+.prog .body{flex:1;padding:16px 18px 18px;background:linear-gradient(90deg,rgba(0,0,0,.07),#0000 14px)}
+.prog .h{font-family:'Special Elite',monospace;font-size:34px;line-height:1;text-transform:uppercase;margin:6px 0 12px;color:#1D1D1D}
+.book{width:252px;min-height:350px;box-sizing:border-box;padding:24px 20px 20px;color:#F4E9DA;box-shadow:3px 3px 0 #EFE8D8,6px 6px 0 #E0D6C2;background:radial-gradient(120% 90% at 70% 30%,var(--g1),var(--g2))}
+.book .h{font-family:Arial,Helvetica,sans-serif;font-weight:300;letter-spacing:.12em;text-transform:uppercase;font-size:34px;color:var(--t);margin:8px 0 16px}
+.book .k{color:#E8DCCB}
+.v-delirium{--g1:#5A2E35;--g2:#1E1418;--t:#E9B7A2}
+.v-momo{--g1:#6B4A3A;--g2:#1F1714;--t:#E2579C}
+
+/* boarding pass */
+.pass{width:430px;max-width:100%;--sw:110px;--bg:#FBFBF8;color:#22323A}
+.pass .main{padding:0;display:flex;flex-direction:column}
+.pass .top{background:#3E6F7D;color:#F4F1E8;font-family:'Special Elite',monospace;font-size:14px;letter-spacing:.2em;padding:8px 18px}
+.pass .rt{display:flex;gap:16px;align-items:baseline;padding:12px 18px 0;font-family:'PT Mono',monospace;font-size:12px;text-transform:uppercase}
+.pass .rt i{font-style:normal;display:block;font-family:Kalam,Caveat,cursive;font-size:22px;text-transform:none}
+.pass .txt{padding:8px 18px 16px}
+.pass .h{font-family:Kalam,Caveat,cursive;font-weight:700}
+.pass .stub{color:#3E6F7D}
+
+/* kraft tags on a twine */
+.tag{width:310px;box-sizing:border-box;padding:22px 22px 18px 50px;color:#3B2A18;
+  background:radial-gradient(circle 9px at 24px 50%,#0000 98%,#0000) ,repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 2px,#0000 2px 5px),linear-gradient(160deg,var(--kr,#D2AD7A),var(--kr2,#C39A62));
+  clip-path:polygon(16% 0,100% 0,100% 100%,16% 100%,0 calc(100% - 26px),0 26px);
+  -webkit-mask:radial-gradient(circle 8px at 24px 50%,#0000 96%,#000);mask:radial-gradient(circle 8px at 24px 50%,#0000 96%,#000)}
+.tag .h{font-family:Kalam,Caveat,cursive;font-weight:700;font-size:25px}
+.tagwrap{position:relative;z-index:1}
+.tagwrap .twine{position:absolute;left:-46px;top:calc(50% - 30px);width:80px;height:60px;pointer-events:none;z-index:2}
+.v-pinkkraft{--kr:#E2BBA7;--kr2:#D3A48D}
+
+/* "coming up" rubber stamp */
+.stamp{position:absolute;right:16px;top:12px;z-index:3;padding:3px 9px 2px;border:2.5px solid #A3392C;border-radius:4px;color:#A3392C;font-family:'Special Elite',monospace;font-size:14px;letter-spacing:.12em;text-transform:uppercase;transform:rotate(-12deg);opacity:.78;mix-blend-mode:multiply}
+.prog .stamp{top:auto;bottom:14px;right:12px}
+.prog:has(.stamp) .body{padding-bottom:50px}
+.tix .stamp{top:auto;bottom:10px;right:calc(var(--sw) + 10px)}
+.tix:has(.stamp) .main{padding-bottom:40px}
+
+/* paper behind the rest of the page so it reads on the lace */
+.lace-page a.go{background:#FBF6EA;padding:6px 16px;box-shadow:0 6px 12px rgba(40,25,10,.25)}
+.lace-page footer.site-foot{background:#FBF6EA;padding:24px 28px!important;border-top:none!important;box-shadow:0 2px 2px rgba(40,25,10,.2),0 10px 18px rgba(40,25,10,.28);transform:rotate(.3deg)}
+@media (max-width:760px){
+  .coll{gap:26px;padding:10px 0 30px}
+  .tk{--r:0deg!important;--y:0px!important}
+  .tix,.pass{width:100%}
+  .coll .cf.m-hide{display:none}
+}
+@media (prefers-reduced-motion:reduce){.tk{transition:none}}
+
+/* scattered like on a real table */
+body.lace-page{overflow-x:hidden}
+.lace-page .desk{position:relative;overflow:hidden}
+.coll.scatter{display:block;position:relative;min-height:1640px;padding:0}
+.coll.scatter>.tk,.coll.scatter>.obj{position:absolute;left:var(--x);top:var(--t)}
+.coll.scatter>.tk:hover,.coll.scatter>.tk:focus-visible{z-index:20}
+.obj{pointer-events:none;z-index:0;filter:drop-shadow(0 2px 2px rgba(20,10,4,.45)) drop-shadow(0 12px 14px rgba(20,10,4,.4))}
+.obj img,.obj svg{display:block;width:100%;height:auto}
+.deco-top{position:absolute;pointer-events:none;z-index:1;filter:drop-shadow(0 3px 3px rgba(20,10,4,.45)) drop-shadow(0 14px 18px rgba(20,10,4,.4))}
+nav.top.simple{display:flex;align-items:baseline;gap:22px;flex-wrap:wrap}
+nav.top.simple .back{font-family:Caveat,cursive;font-size:24px;color:#7A2E2A;text-decoration:none}
+nav.top.simple .lang{margin-left:auto;font-size:15px}
+@media (max-width:1100px){
+  .coll.scatter{display:flex;min-height:0;padding:10px 0 40px}
+  .coll.scatter>.tk{position:relative;left:auto;top:auto}
+  .coll.scatter>.obj{display:none}
+}
+@media (max-width:760px){.deco-top{display:none}}
+
+/* photo prints for Delirium and MOMO */
+.snap{width:262px;box-sizing:border-box;padding:12px 12px 14px;background:#FBF8F0}
+.snap img{display:block;width:100%;height:250px;object-fit:cover;filter:saturate(.92) contrast(.97)}
+.snap .cap{display:block;padding:10px 4px 0}
+.snap .h{font-family:Kalam,Caveat,cursive;font-weight:700;font-size:24px}
+/* used tickets: creased and crumpled from being held */
+.used::after,.used .tag::after{content:"";position:absolute;inset:0;z-index:5;pointer-events:none;background:url(photos/crumple.jpg) var(--cp,center)/var(--cs,420px) ;mix-blend-mode:multiply;opacity:.6}
+.used::before{content:"";position:absolute;inset:0;z-index:6;pointer-events:none;background:url(photos/crumple-hi.png) var(--cp,center)/var(--cs,420px);mix-blend-mode:screen;opacity:.65}
+.used.tagwrap::after,.used.tagwrap::before{display:none}
+.used .tag{position:relative}
+.used .tag::before{content:"";position:absolute;inset:0;z-index:6;pointer-events:none;background:url(photos/crumple-hi.png) var(--cp,center)/var(--cs,420px);mix-blend-mode:screen;opacity:.65}
+.used:nth-child(3n){--cp:30% 70%;--cs:380px}.used:nth-child(3n+1){--cp:80% 20%;--cs:460px}
+.used .stub b,.used .h{position:relative}
+
+/* Lost Lear a little smaller; programmes less tall */
+.prog{min-height:0}
+.prog.sm{width:228px}.prog.sm .h{font-size:28px}.prog.sm .p{font-size:18px}.prog.sm .k{font-size:12px}
+@media (max-width:760px){.prog{width:230px;align-self:center}.prog .body{padding:12px 14px 14px}.prog .h{font-size:28px}}
+
+/* the keepsake box: a wooden file box, lid a little open, index cards inside */
+.filebox{position:relative;width:min(660px,94%);height:420px;margin:26px auto 30px;--wood:linear-gradient(180deg,rgba(214,160,100,.5),rgba(150,96,52,.62)),url(wood.svg) 0 0/600px}
+.filebox .lid{position:absolute;left:3%;right:3%;top:-18px;height:90px;background:var(--wood);border-radius:6px 6px 2px 2px;transform:perspective(700px) rotateX(58deg);transform-origin:bottom;filter:brightness(.72);box-shadow:inset 0 -6px 10px rgba(0,0,0,.35)}
+.filebox .fc{position:absolute;left:var(--l);right:var(--rr);top:var(--t);bottom:30px;background:#FBF7EC;
+  background-image:linear-gradient(#0000 31px,rgba(196,74,64,.45) 31px 32px,#0000 32px),repeating-linear-gradient(#0000 0 25px,rgba(90,120,160,.22) 25px 26px);
+  background-position:0 0,0 40px;box-shadow:0 -1px 0 rgba(0,0,0,.06),0 -4px 8px rgba(40,25,10,.18);border-radius:3px;transform:rotate(var(--fr,0deg))}
+.filebox .fc .tab{position:absolute;top:-26px;left:var(--tl,8%);padding:4px 16px 3px;background:var(--tc,#F2E6C9);border-radius:8px 8px 0 0;font-family:'Special Elite','PT Mono',monospace;font-size:13px;letter-spacing:.06em;color:#6B4A2A;box-shadow:0 -3px 5px rgba(40,25,10,.12);white-space:nowrap}
+.filebox .fc .in{display:block;padding:8px 22px 0;text-align:center;text-wrap:balance;white-space:nowrap;overflow:hidden;text-overflow:clip}
+.filebox .c4 .in{white-space:normal}
+.filebox h1.page{margin:0;font-size:38px;line-height:1.05}
+.filebox .c2 .in{font-family:Caveat,cursive;font-size:25px;color:#2E2B26}
+.filebox .c3 .in{font-family:Caveat,cursive;font-size:24px;color:#5E5A52}
+.filebox .c4{background:#F6DCD6;background-image:repeating-linear-gradient(#0000 0 25px,rgba(122,46,42,.12) 25px 26px);box-shadow:0 -2px 3px rgba(40,25,10,.15),0 -8px 14px rgba(40,25,10,.22)}
+.filebox .c4 .in{font-family:Kalam,Caveat,cursive;font-weight:700;font-size:22px;color:#7A2E2A;padding-top:12px}
+.filebox .front{position:absolute;left:0;right:0;bottom:0;height:112px;background:var(--wood);border-radius:4px 4px 8px 8px;
+  box-shadow:inset 0 6px 8px rgba(255,235,200,.25),inset 0 -10px 16px rgba(0,0,0,.3),0 3px 3px rgba(20,10,4,.4),0 16px 22px rgba(20,10,4,.45)}
+.filebox .front::before{content:"";position:absolute;left:0;right:0;top:0;height:10px;background:rgba(255,230,190,.18);border-radius:4px 4px 0 0}
+.filebox .plate{position:absolute;left:50%;top:34px;transform:translateX(-50%);padding:8px 26px;background:linear-gradient(160deg,#E7CF8E,#B8944A 55%,#D8BC74);border-radius:3px;
+  font-family:'Special Elite','PT Mono',monospace;font-size:14px;letter-spacing:.14em;color:#4A3414;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 2px 3px rgba(0,0,0,.35);white-space:nowrap}
+.filebox .plate::before,.filebox .plate::after{content:"";position:absolute;top:50%;width:5px;height:5px;margin-top:-2.5px;border-radius:50%;background:#7A5A26}
+.filebox .plate::before{left:8px}.filebox .plate::after{right:8px}
+@media (max-width:600px){.filebox{height:440px}.filebox h1.page{font-size:32px}.filebox .c2 .in{font-size:17px;padding:10px 8px 0}.filebox .c3 .in{font-size:18px}.filebox .c4 .in{font-size:18px;padding:12px 14px 0}.filebox .fc .tab{font-size:11px;padding:3px 10px}.filebox .plate{top:30px}}
+nav.top.simple .home{white-space:nowrap}
+@media (max-width:600px){.lace-page nav.top.simple{padding:10px 14px;gap:6px 14px;margin:0}.lace-page nav.top.simple .home{font-size:21px}.lace-page nav.top.simple .back{font-size:20px}.lace-page nav.top.simple .lang{font-size:13px}}
+@media (max-width:600px){.lace-page nav.top.simple a{padding:4px 2px}.lace-page nav.top.simple .home{margin-right:0;flex-basis:100%}}
+
+/* header: a ceramic lemon spoon rest with "Culture" painted in the bowl */
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.spoon{position:relative;width:min(640px,96%);margin:26px auto 34px}
+.spoon .sr{display:block;width:100%;height:auto;transform:rotate(-4deg);filter:drop-shadow(0 2px 2px rgba(20,10,4,.45)) drop-shadow(0 14px 16px rgba(20,10,4,.45))}
+.lemonnote{position:absolute;right:2%;bottom:-30px;margin:0;display:flex;align-items:center;gap:6px;padding:6px 14px 6px 6px;background:#FBF6EA;border-radius:3px;transform:rotate(3deg);
+  font-family:Caveat,cursive;font-size:22px;line-height:1.1;color:#4D3A22;box-shadow:0 2px 2px rgba(20,10,4,.3),0 8px 12px rgba(20,10,4,.3)}
+.lemonnote .lm{width:70px;height:auto;filter:drop-shadow(0 3px 2px rgba(20,10,4,.35))}
+@media (max-width:600px){.spoon{margin-bottom:60px}.lemonnote{font-size:18px;bottom:-48px;right:0}.lemonnote .lm{width:52px}}
+
+/* little starburst sticker in the top-right corner of every card you can open */
+.tapme{position:absolute;top:4px;right:4px;z-index:8;width:46px;height:46px;display:flex;align-items:center;justify-content:center;
+  background:#E9A23B;color:#fff;font-family:Kalam,Caveat,cursive;font-weight:700;font-size:16px;letter-spacing:.02em;transform:rotate(14deg);
+  clip-path:polygon(50% 0,59% 14%,75% 7%,77% 24%,93% 25%,86% 41%,100% 50%,86% 59%,93% 75%,77% 76%,75% 93%,59% 86%,50% 100%,41% 86%,25% 93%,23% 76%,7% 75%,14% 59%,0 50%,14% 41%,7% 25%,23% 24%,25% 7%,41% 14%);
+  text-shadow:0 1px 0 rgba(120,60,0,.4);transition:transform .3s}
+.tix .tapme{right:6px}
+.tagwrap .tapme{top:-6px;right:-10px}
+a.tk:hover .tapme{transform:rotate(-6deg) scale(1.12)}
+@media (prefers-reduced-motion:reduce){.tapme{transition:none}}
+:lang(ru) .tapme{font-size:12.5px}
