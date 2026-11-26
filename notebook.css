@@ -90,3 +90,6 @@ nav.top.simple .home{white-space:nowrap}
   nav.top.simple .back{color:#1F1D1A!important;font-size:21px!important;padding:2px 0!important}
   nav.top.simple .lang{margin-left:auto;font-size:13px!important}
 }
+@media (max-width:760px){nav.top.simple a,nav.top.simple .lang{white-space:nowrap}nav.top.simple .back{font-size:18px!important}}
+@media (max-width:760px){nav.top.simple{gap:8px}nav.top.simple .back{font-size:17px!important}nav.top.simple .more+.lang{margin-left:6px!important}nav.top.simple .lang{font-size:12px!important}nav.top.simple .more{margin-left:auto!important}}
+@media (max-width:760px){nav.top.simple .lang a,nav.top.simple .lang b{font-size:14px!important;padding:2px 1px!important}}
