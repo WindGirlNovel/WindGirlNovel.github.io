@@ -22,6 +22,24 @@
 <script src="protect.js" defer></script>
 <link rel="stylesheet" href="worn.css">
 <script src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js?apiKey=pt_ab70fa285c3779aa44b9305eda519b" defer></script>
+<style>:root{--redlab:"красная нить · где больно";--greenlab:"зелёная нить · где есть выход"}
+.boardbar{display:none}
+@media (max-width:760px){
+  .board{display:flex!important;flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory;gap:0!important;padding:40px 0 26px!important;scrollbar-width:none;align-items:stretch}
+  .board::-webkit-scrollbar{display:none}
+  .board .threads,.board .pins{display:none!important}
+  .board .note{flex:0 0 80%;margin:0 10%;box-sizing:border-box;scroll-snap-align:center;scroll-snap-stop:always;min-height:240px;padding:34px 24px 26px;height:auto!important;width:auto!important}
+  .board .note p{font-size:22px;line-height:1.3}
+  .board .note .big{font-size:27px}
+  .board .note::before{position:absolute;top:-30px;left:50%;transform:translateX(-50%);font-family:Caveat,cursive;font-size:17px;white-space:nowrap}
+  .board .note:has(.pin.red)::before{content:var(--redlab);color:#9A2A20}
+  .board .note:has(.pin.green)::before{content:var(--greenlab);color:#2F6E24}
+  .boardbar{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 8px;width:fit-content;font-family:Caveat,cursive;font-size:20px;color:#4D3A22}
+  .boardbar button{all:unset;cursor:pointer;font-size:24px;padding:0 8px;color:#7A2E2A}
+  .boardbar .dots{display:flex;gap:5px}.boardbar .dots i{width:6px;height:6px;border-radius:50%;background:#CDBB9A}.boardbar .dots i.on{background:#7A2E2A;transform:scale(1.3)}
+  .legend{display:none}
+}
+</style>
 </head>
 <body>
 <div class="season season-desk" aria-hidden="true"></div>
@@ -105,12 +123,7 @@
 <p class="legend"><span class="sw red"></span> красная нить: где больно &nbsp;&nbsp; <span class="sw green"></span> зелёная нить: где есть выход &nbsp;&nbsp; тенденции, а не прогнозы</p>
 </div>
 
-<div style="display: flex; flex-wrap: wrap; gap: 12px 26px; align-items: center; padding-top: 22px">
-<a href="https://www.linkedin.com/feed/update/urn:li:activity:7526336000827215872/" style="font-family: Caveat, cursive; font-weight: 700; font-size: 25px; padding: 8px 18px; text-decoration: none; border: 2.5px solid #2E2B26; border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; transform: rotate(1deg)">выводы о надёжности</a>
-<a href="https://www.linkedin.com/feed/update/urn:li:activity:7526445354377080833/" style="font-family: Caveat, cursive; font-weight: 700; font-size: 25px; padding: 8px 18px; text-decoration: none; border: 2.5px solid #2E2B26; border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px; transform: rotate(-1.4deg)">выводы о внедрении ИИ</a>
-<a href="https://www.linkedin.com/feed/update/urn:li:activity:7527395393433681920/" style="font-family: Caveat, cursive; font-weight: 700; font-size: 25px; padding: 8px 18px; text-decoration: none; border: 2.5px solid #2E2B26; border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; transform: rotate(0.8deg)">выводы об образовании и ИИ</a>
-<p style="margin: 0; font-family: 'Special Elite', 'PT Mono', monospace; font-size: 14px; color: #5E5A52; max-width: 420px">сделано на Python по открытым данным: Министерство образования США, BLS, Министерство труда штата Нью-Йорк, IPEDS, Бюро переписи США</p>
-</div>
+<p class="findlinks" style="margin:18px 0 0;font-family:Caveat,cursive;font-size:22px;color:#4A453C">выводы в LinkedIn: <a href="https://www.linkedin.com/feed/update/urn:li:activity:7526336000827215872/" target="_blank" rel="noopener" style="color:#7A2E2A">надёжность</a> · <a href="https://www.linkedin.com/feed/update/urn:li:activity:7526445354377080833/" target="_blank" rel="noopener" style="color:#7A2E2A">внедрение ИИ</a> · <a href="https://www.linkedin.com/feed/update/urn:li:activity:7527395393433681920/" target="_blank" rel="noopener" style="color:#7A2E2A">образование и ИИ</a></p>
 
 <div style="margin-top: 26px; margin-left: 4%; max-width: 680px; display: flex; flex-direction: column; gap: 8px">
 <h3 style="margin: 0; font-family: Kalam, Caveat, cursive; font-weight: 700; font-size: 25px">раньше: <span style="text-decoration: line-through; text-decoration-color: #5E5A52; text-decoration-thickness: 2px">сколько зарабатывает специальность?</span> сколько стоит специальность в Нью-Йорке?</h3>
@@ -122,7 +135,7 @@
 </div>
 <div class="clear"></div>
 <style>.heartnote{position:relative;clear:both;width:fit-content;max-width:420px;margin:44px auto 6px;padding:24px 30px 20px;background-color:#F2C6C2;transform:rotate(-1.5deg);text-align:center;font-family:Caveat,cursive;color:#2E2B26}
-.heartnote p{margin:0 0 10px;font-size:24px;line-height:1.25}.heartnote .lyk{display:inline-block;font-size:20px}</style><div class="heartnote wnote"><p>если откликнулось, оставь сердечко 🤍<br><span style="font-size:19px;color:#5E5A52">можно нажимать сколько хочется</span></p><div class="lyk" data-lyket-type="clap" data-lyket-template="heart" data-lyket-namespace="windgirl" data-lyket-id="research" data-lyket-color-primary="#7A2E2A" data-lyket-color-background="#FBF6EA" data-lyket-color-text="#2E2B26" data-lyket-color-icon="#7A2E2A" data-lyket-color-highlight="#E8B04A"></div></div>
+.heartnote p{margin:0 0 10px;font-size:24px;line-height:1.25}.heartnote .lyk{display:inline-block;font-size:20px}</style><div class="heartnote wnote"><p>если это впечатлило или задело, оставь сердечко 🤍<br><span style="font-size:19px;color:#5E5A52">можно нажимать сколько хочется</span></p><div class="lyk" data-lyket-type="clap" data-lyket-template="heart" data-lyket-namespace="windgirl" data-lyket-id="research" data-lyket-color-primary="#7A2E2A" data-lyket-color-background="#FBF6EA" data-lyket-color-text="#2E2B26" data-lyket-color-icon="#7A2E2A" data-lyket-color-highlight="#E8B04A"></div></div>
 <style>.readnote{position:relative;clear:both;max-width:520px;margin:30px auto 10px;padding:26px 30px 24px 58px;transform:rotate(.8deg);font-family:Caveat,cursive;color:#2E2B26;filter:drop-shadow(0 7px 9px rgba(60,40,10,.25))}
 .readnote .pp{position:absolute;inset:0;clip-path:polygon(0 2%,8% 0,17% 1.6%,27% .3%,38% 2%,49% .6%,60% 1.8%,71% .2%,82% 1.5%,92% .4%,100% 1.8%,99.4% 50%,100% 98%,90% 99.6%,79% 98.2%,67% 99.8%,55% 98.4%,43% 100%,31% 98.5%,19% 99.7%,9% 98.3%,0 99.5%,.6% 50%);background-image:var(--crease),var(--grain),linear-gradient(120deg,#F6EDD3,#EFE1BB 60%,#E3CC97)}
 .readnote .pp::before{content:"";position:absolute;inset:0;background:var(--wavy-rule);background-size:1240px 38px;background-position:0 10px}
@@ -139,8 +152,9 @@ fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/
 </div>
 <footer class="site-foot" style="clear:both;margin-top:60px;padding-top:26px;border-top:1.5px dashed rgba(122,74,34,.35)">
 <p style="margin:0 0 12px;font-family:Kalam,Caveat,cursive;font-weight:700;font-size:18px;color:#7A2E2A;transform:rotate(-1deg);transform-origin:left">Если вам откликнулось живое, оставайтесь: заглядывайте почаще, здесь будет новое</p>
+<a style="display:inline-block;margin:0 14px 10px 0;padding:6px 14px;border:1.5px solid #2F3E5C;border-radius:3px;font-family:Caveat,cursive;font-size:24px;color:#2F3E5C;text-decoration:none;background:rgba(255,255,255,.35);transform:rotate(-1deg)" href="https://www.linkedin.com/in/saltanatmeiram/" target="_blank" rel="noopener">LinkedIn</a><a style="display:inline-block;margin:0 14px 10px 0;padding:6px 14px;border:1.5px solid #2F3E5C;border-radius:3px;font-family:Caveat,cursive;font-size:24px;color:#2F3E5C;text-decoration:none;background:rgba(255,255,255,.35);transform:rotate(1.2deg)" href="https://www.instagram.com/windgirlnovel/" target="_blank" rel="noopener">Instagram @windgirlnovel</a><a style="display:inline-block;margin:0 14px 10px 0;padding:6px 14px;border:1.5px solid #2F3E5C;border-radius:3px;font-family:Caveat,cursive;font-size:24px;color:#2F3E5C;text-decoration:none;background:rgba(255,255,255,.35);transform:rotate(-.6deg)" href="mailto:windgirlnovel@outlook.com">windgirlnovel@outlook.com</a>
 
-<p style="margin:16px 0 0;font-family:'Special Elite','PT Mono',monospace;font-size:13px;line-height:1.5;color:#5E5A52;max-width:640px">© 2026 Saltanat Kamillya M. · © Wind Girl Novel. Все права защищены. Тексты, фотографии и роман «The Wind Girl» нельзя копировать и использовать без моего письменного разрешения.</p>
+<p style="margin:16px 0 0;font-family:'Special Elite','PT Mono',monospace;font-size:13px;line-height:1.5;color:#5E5A52;max-width:640px">© 2026 Saltanat Kamillya M. · © Wind Girl Novel. Все права защищены. Тексты, фотографии и роман «The Wind Girl» нельзя копировать и использовать без моего письменного разрешения</p>
 </footer>
 </div>
 </div>
@@ -184,6 +198,19 @@ fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
   draw();
 })();
+</script>
+<script>
+document.querySelectorAll('.board').forEach(function(c){
+  var bar=document.createElement('div');bar.className='boardbar';bar.innerHTML='<button class="prev" aria-label="previous">‹</button><span class="dots"></span><span class="num"></span><button class="next" aria-label="next">›</button>';
+  c.parentNode.insertBefore(bar,c.nextSibling);
+  var cards=[].slice.call(c.querySelectorAll(':scope > .note'));var dots=bar.querySelector('.dots');dots.innerHTML=cards.map(function(){return '<i></i>'}).join('');
+  var ds=[].slice.call(dots.children),num=bar.querySelector('.num');
+  function cur(){var mid=c.scrollLeft+c.clientWidth/2,b=0,bd=1e9;cards.forEach(function(k,i){var d=Math.abs(k.offsetLeft+k.offsetWidth/2-mid);if(d<bd){bd=d;b=i}});return b}
+  function upd(){var i=cur();ds.forEach(function(d,j){d.className=j==i?'on':''});num.textContent=(i+1)+' / '+cards.length}
+  function go(d){var i=Math.max(0,Math.min(cards.length-1,cur()+d)),k=cards[i];c.scrollTo({left:k.offsetLeft-(c.clientWidth-k.offsetWidth)/2,behavior:'smooth'})}
+  bar.querySelector('.prev').onclick=function(){go(-1)};bar.querySelector('.next').onclick=function(){go(1)};
+  c.addEventListener('scroll',function(){requestAnimationFrame(upd)},{passive:true});upd();
+});
 </script>
 </body>
 </html>
