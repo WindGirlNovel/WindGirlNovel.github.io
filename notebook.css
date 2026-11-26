@@ -76,3 +76,10 @@ h3.hand{margin:22px 0 0;font-family:Kalam,Caveat,cursive;font-weight:700;font-si
   .float-r,.float-l{float:none;margin:14px auto}
   .sticky{margin-left:0}
 }
+
+/* simple top bar: name + one way back */
+nav.top.simple{display:flex;align-items:baseline;gap:22px;flex-wrap:wrap}
+nav.top.simple .back{font-family:Caveat,cursive;font-size:24px;color:#7A2E2A;text-decoration:none}
+nav.top.simple .lang{margin-left:auto;font-size:15px}
+nav.top.simple .home{white-space:nowrap}
+@media (max-width:600px){nav.top.simple{gap:6px 14px}nav.top.simple a{padding:4px 2px}nav.top.simple .home{margin-right:0;flex-basis:100%;font-size:21px}nav.top.simple .back{font-size:20px}}
