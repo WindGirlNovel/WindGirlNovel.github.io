@@ -4,13 +4,20 @@
   var f=document.querySelector('.flow'); if(!f) return;
   var kids=[].slice.call(f.children), end=kids.length;
   for(var i=0;i<kids.length;i++){ if(kids[i].matches('.heartnote,.readnote')){ end=i; while(end>0&&kids[end-1].tagName=='STYLE') end--; break; } }
-  var pages=[],cur=null,hasH=false;
-  for(var i=0;i<end;i++){var k=kids[i];
-    if(k.matches('h2.sec')&&hasH){cur=null}
-    if(!cur){cur=document.createElement('div');cur.className='pg';pages.push(cur);hasH=false}
-    if(k.matches('h2.sec'))hasH=true;
-    cur.appendChild(k)}
-  if(pages.length<2) return;
+  var items=kids.slice(0,end),pages=[];
+  function isFloat(k){if(!k)return false;var cs=getComputedStyle(k);return k.matches('.doodle,.mnote,figure,.polaroid,.sketch,img')||cs.float!='none'}
+  function len(k){if(k.tagName=='STYLE'||k.tagName=='SCRIPT')return 0;var n=(k.textContent||'').replace(/\s+/g,' ').length;if(k.matches('figure,.polaroid,img,video')||k.querySelector('img,video'))n+=350;return n}
+  var secs=items.filter(function(k){return k.matches('h2.sec')}).length,groups=[],g=[];
+  if(secs>=2){var hasH=false;items.forEach(function(k){if(k.matches('h2.sec')&&hasH){groups.push(g);g=[];hasH=false}if(k.matches('h2.sec'))hasH=true;g.push(k)});groups.push(g)}
+  else{var T=850,c=0;items.forEach(function(k,i){var prev=items[i-1];
+      var head=k.matches('h2,h3');var ok=g.length&&!isFloat(prev)&&!(prev&&prev.matches('h2,h3'))&&(k.matches('p,h2,h3,blockquote,figure,.doodle,.mnote,.polaroid,div:not(.clear)'));
+      if(ok&&(c>=T||(head&&c>=T*.45))){groups.push(g);g=[];c=0}
+      g.push(k);c+=len(k)});
+    groups.push(g);
+    var tot=function(a){return a.reduce(function(s,k){return s+len(k)},0)};
+    if(groups.length>1&&tot(groups[groups.length-1])<520){var l=groups.pop();groups[groups.length-1]=groups[groups.length-1].concat(l)}}
+  if(groups.length<2) return;
+  groups.forEach(function(a){var d=document.createElement('div');d.className='pg';a.forEach(function(k){d.appendChild(k)});pages.push(d)});
   var ru=(document.documentElement.lang||'').indexOf('ru')==0;
   var pager=document.createElement('div');pager.className='pager';
   pages.forEach(function(p){pager.appendChild(p)});

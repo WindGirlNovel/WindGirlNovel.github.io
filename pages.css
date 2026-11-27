@@ -1,7 +1,7 @@
 /* phones: a chapter reads like a book, one section per page, swipe sideways */
-.pager{display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;align-items:flex-start;transition:height .35s ease;margin:0 -4px}
+.pager{display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;align-items:flex-start;transition:height .35s ease;margin:0 -16px}
 .pager::-webkit-scrollbar{display:none}
-.pager>.pg{flex:0 0 100%;box-sizing:border-box;padding:0 4px;scroll-snap-align:start;scroll-snap-stop:always;min-width:0}
+.pager>.pg{flex:0 0 100%;box-sizing:border-box;padding:0 16px;scroll-snap-align:start;scroll-snap-stop:always;min-width:0;overflow:hidden}
 .pbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:14px 0 8px;font-family:Caveat,cursive;font-size:21px;color:#7A2E2A;white-space:nowrap}
 .pbar button{font:inherit;color:inherit;background:none;border:0;padding:4px 6px;cursor:pointer}
 .pbar button[disabled]{opacity:.25}
