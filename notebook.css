@@ -108,3 +108,10 @@ nav.top.simple .home{white-space:nowrap}
   .readnote{float:left!important;clear:none!important;margin:30px 0 20px 3%!important}
   footer.site-foot{clear:both}
 }
+
+/* phones: skip the heaviest live paper filters so pages paint at once (the paper texture stays) */
+@media (max-width:700px){
+  .sheet>svg.fx{display:none}
+  .stain g{filter:none}
+  .season svg{filter:none!important}
+}
