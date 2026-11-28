@@ -223,3 +223,16 @@ a.tk:hover .tapme{transform:rotate(-6deg) scale(1.12)}
 body.lace-page footer.site-foot{background:none!important;box-shadow:none!important;transform:none!important;padding:10px 0 20px!important;border:none!important}
 body.lace-page footer.site-foot p{display:inline-block;background:rgba(246,238,220,.82);border-radius:10px;padding:3px 12px!important;margin:0 0 8px!important;transform:none!important}
 body.lace-page footer.site-foot p{background:rgba(246,238,220,.92)!important}
+
+/* Libertango: Roman ticket */
+.roma{width:236px;box-sizing:border-box;display:flex;flex-direction:column;text-align:center;color:#3A332A;background-color:#F3EADB;background-image:radial-gradient(ellipse at 25% 8%,rgba(255,255,255,.75),transparent 55%),linear-gradient(118deg,transparent 28%,rgba(150,128,105,.16) 29%,transparent 31.5%,transparent 61%,rgba(150,128,105,.12) 62%,transparent 64%),linear-gradient(64deg,transparent 70%,rgba(150,128,105,.12) 71%,transparent 73%);border:3px double #B5523B;border-radius:118px 118px 6px 6px/64px 64px 6px 6px;padding-top:12px}
+.roma .laurel{display:block;width:96px;height:56px;margin:2px auto 0}
+.roma .rk{display:block;font-family:'Crimson Pro',Georgia,serif;font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:#9E2B25;margin:2px 14px 0}
+.roma .h{display:block;font-family:'Crimson Pro',Georgia,serif;font-weight:600;font-size:30px;line-height:1.05;letter-spacing:.07em;text-transform:uppercase;color:#7A2E1F;margin:6px 10px 8px}
+.roma .rule{display:block;height:1px;margin:0 28px 8px;background:linear-gradient(90deg,transparent,#B5523B,transparent)}
+.roma .p{display:block;font-family:Caveat,cursive;font-size:19px;line-height:1.15;padding:0 16px 12px}
+.roma .k{display:block;font-family:'Special Elite',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#6B655B;padding:0 14px 54px}
+.roma .fila{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding:9px 16px 8px;border-top:2px dashed #C9A27A;background:rgba(181,82,59,.10);font-family:'Crimson Pro',Georgia,serif;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:#7A2E1F}
+.roma .fila b{font-weight:600}
+.roma .stamp{top:auto;bottom:50px;right:12px}
+@media (max-width:760px){.coll.scatter>.tk.roma{flex-basis:auto;width:66%;margin:0 17%}}
